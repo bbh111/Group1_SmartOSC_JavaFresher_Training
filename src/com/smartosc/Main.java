@@ -4,10 +4,9 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
-    static int numberCompare = 5;
     public static void main(String[] args) {
         // Bài 1
-         String string = "Hello World!";
+        String string = "Hello World!";
         // System.out.println(getLastCharacter(string));
         // System.out.println(getFirstCharacter(string));
 
@@ -18,7 +17,7 @@ public class Main {
         // countDown(10);
 
         // Bài 4
-         System.out.println(convertStringToUniCode("Hello"));
+        System.out.println(convertStringToUniCode("Hello"));
 
         // Bài 5
         // System.out.println(getString(string));
@@ -34,6 +33,10 @@ public class Main {
 
         // Bài 9
         // System.out.println(dropRight(2, string));
+    }
+
+    public static void generateViewConsole() {
+        System.out.println();
     }
 
     // Bài 1
@@ -63,19 +66,17 @@ public class Main {
     }
 
     // bài 4
-    public static String convertStringToUniCode(String string) {
-        StringBuilder builder = new StringBuilder();
+    public static long convertStringToUniCode(String string) {
         byte[] bytes = string.getBytes(StandardCharsets.US_ASCII);
         long result = 1;
         for (byte aByte : bytes) {
             result *= aByte;
         }
-        System.out.println(result);
-        return builder.toString();
+        return result;
     }
 
     // Bài 5
-    public static String getString (String string) {
+    public static String getString(String string) {
         int n = string.length();
         if (n == 0) {
             return null;
