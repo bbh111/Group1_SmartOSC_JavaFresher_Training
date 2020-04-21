@@ -56,7 +56,7 @@ public class Controller {
     public int ex5(String temp){
 
        if(temp.length() > 0){
-           temp2 = temp.substring(0,temp.length()-1); // to check the lenghth of String is out of range yet.
+           temp2 = temp.substring(0,temp.length()-1); //check the lenghth of String is out of range yet.
            resultEx5 *= (int)temp.charAt(temp.length()-1);
            if(temp2 != null || temp2.isEmpty()){
                return ex5(temp2);
