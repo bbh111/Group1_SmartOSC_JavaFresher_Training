@@ -11,16 +11,16 @@ public class Main {
 
             switch (option){
                 case 1:
-                    controller.Ex1();
+                    controller.ex1();
                     break;
                 case 2:
-                    controller.Ex2();
+                    controller.ex2();
                     break;
                 case 3:
-                    controller.Ex3();
+                    controller.ex3();
                     break;
                 case 4:
-                    controller.Ex4();
+                    controller.ex4();
                     break;
                 case 5:
                     System.out.println("Enter string: ");
@@ -29,7 +29,7 @@ public class Main {
                     System.out.println(controller.resultEx5);
                     break;
                 case 6:
-                    controller.StringFunction();
+                    controller.stringFunction();
                     break;
             }
 

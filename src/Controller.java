@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Controller {
     Scanner sc = new Scanner(System.in);
-    public void Ex1(){
+    public void ex1(){
         System.out.print("Enter string: ");
         String strTemp = sc.nextLine();
         System.out.println(strTemp.length());
@@ -17,12 +17,12 @@ public class Controller {
         System.out.println("This is first character: " + firstChar);
         System.out.println("This is last character: "+ lastChar);
     }
-    public void Ex2(){
+    public void ex2(){
         BigInteger numFirst = new BigInteger("2");
         BigInteger result = numFirst.pow(1024);
         System.out.println(result);
     }
-    public void Ex3(){
+    public void ex3(){
         System.out.print("Enter number: ");
         int number = Integer.valueOf(sc.nextLine());
         System.out.print("All number from 0 to " + number +" is: \t");
@@ -32,7 +32,7 @@ public class Controller {
         System.out.println();
 
     }
-    public void Ex4(){
+    public void ex4(){
         System.out.print("Enter string: ");
         String text = sc.nextLine();
 
@@ -46,7 +46,7 @@ public class Controller {
     Long resultEx5 = 1L;
     public int Ex5(String temp){
        if(temp.length() > 0){
-           temp2 = temp.substring(0,temp.length()-1);
+           temp2 = temp.substring(0,temp.length()-1); // to check the lenghth of String is out of range yet.
            resultEx5 *= (int)temp.charAt(temp.length()-1);
            if(temp2 != null || temp2.isEmpty()){
                return Ex5(temp2);
@@ -54,7 +54,7 @@ public class Controller {
        }
         return 1;
     }
-    public void StringFunction(){
+    public void stringFunction(){
         System.out.println("Enter String: ");
         String text = sc.nextLine();
         System.out.println("Your string is: "+ text);
