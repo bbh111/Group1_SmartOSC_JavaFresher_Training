@@ -121,6 +121,7 @@ public class Main {
                     scanner.nextLine();
                     break;
                 case 11:
+                    System.out.println("Good bye!");
                     System.exit(0);
                     break;
                 default:
