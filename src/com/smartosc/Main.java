@@ -18,7 +18,7 @@ public class Main {
         // countDown(10);
 
         // Bài 4
-        // System.out.println(convertStringToUniCode("Hello"));
+         System.out.println(convertStringToUniCode("Hello"));
 
         // Bài 5
         // System.out.println(getString(string));
@@ -66,9 +66,11 @@ public class Main {
     public static String convertStringToUniCode(String string) {
         StringBuilder builder = new StringBuilder();
         byte[] bytes = string.getBytes(StandardCharsets.US_ASCII);
+        long result = 1;
         for (byte aByte : bytes) {
-            builder.append(aByte);
+            result *= aByte;
         }
+        System.out.println(result);
         return builder.toString();
     }
 
