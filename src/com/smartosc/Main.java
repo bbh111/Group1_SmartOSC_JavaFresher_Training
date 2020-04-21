@@ -124,7 +124,7 @@ public class Main {
                     System.exit(0);
                     break;
                 default:
-                    errorUtil.alertErrorChoice("(1|2|3)");
+                    errorUtil.alertErrorChoice("(1 -> 11)");
                     break;
             }
         }
@@ -147,7 +147,7 @@ public class Main {
     // Bài 3
     public static void countDown(int number) {
         for (int i = number; i >= 0; i--) {
-            System.out.println(number - (i + 1));
+            System.out.println(number);
             try {
                 Thread.sleep(1 * 1000);
             } catch (InterruptedException e) {
