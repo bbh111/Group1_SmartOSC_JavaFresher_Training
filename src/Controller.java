@@ -53,13 +53,13 @@ public class Controller {
 
     String temp2 = null;
     Long resultEx5 = 1L;
-    public int Ex5(String temp){
+    public int ex5(String temp){
 
        if(temp.length() > 0){
            temp2 = temp.substring(0,temp.length()-1); // to check the lenghth of String is out of range yet.
            resultEx5 *= (int)temp.charAt(temp.length()-1);
            if(temp2 != null || temp2.isEmpty()){
-               return Ex5(temp2);
+               return ex5(temp2);
            }
        }
         return 1;
