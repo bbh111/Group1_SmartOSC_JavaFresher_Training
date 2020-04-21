@@ -42,9 +42,19 @@ public class Controller {
         }
         System.out.println(longTemp);
     }
+
+    public Long getResultEx5() {
+        return resultEx5;
+    }
+
+    public void setResultEx5(Long resultEx5) {
+        this.resultEx5 = resultEx5;
+    }
+
     String temp2 = null;
     Long resultEx5 = 1L;
     public int Ex5(String temp){
+
        if(temp.length() > 0){
            temp2 = temp.substring(0,temp.length()-1); // to check the lenghth of String is out of range yet.
            resultEx5 *= (int)temp.charAt(temp.length()-1);

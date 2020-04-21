@@ -25,6 +25,7 @@ public class Main {
                 case 5:
                     System.out.println("Enter string: ");
                     String temp = controller.sc.nextLine();
+                    controller.setResultEx5(1L);
                     controller.Ex5(temp);
                     System.out.println(controller.resultEx5);
                     break;
