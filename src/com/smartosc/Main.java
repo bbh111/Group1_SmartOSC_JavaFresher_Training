@@ -21,7 +21,7 @@ public class Main {
         // System.out.println(convertStringToUniCode("Hello"));
 
         // Bài 5
-        // System.out.println(getString());
+        // System.out.println(getString(string));
 
         // Bài 6
         // System.out.println(takeLeft(2, string));
@@ -72,14 +72,18 @@ public class Main {
         return builder.toString();
     }
 
-    public static String getString () {
-        numberCompare--;
-        if (numberCompare >= 0) {
-            return "Done";
+    // Bài 5
+    public static String getString (String string) {
+        int n = string.length();
+        if (n == 0) {
+            return null;
+        } else {
+            System.out.print((int) string.charAt(0));
+            return getString(string.substring(1, n));
         }
-        return getString();
     }
 
+    // Bài
     public static String takeLeft(int n, String string) {
         return string.substring(0, n);
     }
