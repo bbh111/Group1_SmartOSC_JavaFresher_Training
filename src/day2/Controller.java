@@ -198,11 +198,11 @@ public class Controller {
 
     public void example8() {
         System.out.println("-----Example 8-----");
-        BankAccount bankAccount = new BankAccount(10000);
+        BankAccount bankAccount = new BankAccount(10000); //default balance is 10000
         System.out.println("You want to :");
         System.out.println("1- deposit ");
         System.out.println("2- withdraw");
-        int option = valid.isIntNumber("Enter value");
+        int option = valid.isIntNumber("Enter your choose: ");
         switch (option) {
             case 1:
                 bankAccount.deposit();
