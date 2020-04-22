@@ -1,3 +1,5 @@
+package day1;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +56,6 @@ public class Controller {
     String temp2 = null;
     Long resultEx5 = 1L;
     public int ex5(String temp){
-
        if(temp.length() > 0){
            temp2 = temp.substring(0,temp.length()-1); //check the lenghth of String is out of range yet.
            resultEx5 *= (int)temp.charAt(temp.length()-1);

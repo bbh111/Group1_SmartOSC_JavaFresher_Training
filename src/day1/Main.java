@@ -1,14 +1,15 @@
+package day1;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Controller controller = new Controller();
-        int option = 0;
+        int option = 3;
         do{
             controller.menu();
             option = Integer.valueOf(new Scanner(System.in).nextLine());
-
             switch (option){
                 case 1:
                     controller.ex1();
