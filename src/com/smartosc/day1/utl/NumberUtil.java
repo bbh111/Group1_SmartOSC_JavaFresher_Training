@@ -1,4 +1,4 @@
-package com.smartosc.utl;
+package com.smartosc.day1.utl;
 
 public class NumberUtil {
     public boolean checkIsNumber(String s){
