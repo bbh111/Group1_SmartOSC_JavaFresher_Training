@@ -1,4 +1,4 @@
-package com.smartosc.day1.utl;
+package com.smartosc.utl;
 
 public class ErrorUtil {
     public void alertErrorNumberFormat(String choice){

@@ -1,4 +1,5 @@
-package com.smartosc.day1.utl;
+package com.smartosc.utl;
+import java.util.Random;
 
 public class NumberUtil {
     public boolean checkIsNumber(String s){
@@ -7,4 +8,10 @@ public class NumberUtil {
         }
         return true;
     }
+
+    public static int randomInt(int bound) {
+        Random random = new Random();
+        return random.nextInt(bound);
+    }
+
 }

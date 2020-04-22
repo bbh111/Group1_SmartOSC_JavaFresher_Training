@@ -1,7 +1,7 @@
 package com.smartosc.day1;
 
-import com.smartosc.day1.utl.ErrorUtil;
-import com.smartosc.day1.utl.NumberUtil;
+import com.smartosc.utl.ErrorUtil;
+import com.smartosc.utl.NumberUtil;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
