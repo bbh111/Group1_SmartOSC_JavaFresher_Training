@@ -6,6 +6,99 @@ import java.util.*;
 
 public class ArrayController {
     public static ArrayController instance;
+    static Scanner scanner = new Scanner(System.in);
+    public void generateViewConsole() {
+        while (true) {
+            System.out.println("1. Lấy dãy số ngẫu nhiên số tự nhiên từ 0 -> N.");
+            System.out.println("2. Thay đổi vị trí số trước cho số sau trong dãy số");
+            System.out.println("3. Di chuyển số dương lên trên đầu trong danh sách số tự nhiên.");
+            System.out.println("4. Tính trung bình cộng của dãy số tự nhiên.");
+            System.out.println("5. Sắp sếp lại dãy số theo chiều từ lớn đến bé.");
+            System.out.println("6. Xóa phần từ trùng lặp trong dãy số.");
+            System.out.println("7. Tìm kiếm danh sách Timezone bằng từ khóa. ");
+            System.out.println("8. Quay lại");
+            System.out.println("-------------------------*--------------------------\n");
+            System.out.println("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.println("Nhập số lượng phần tử: ");
+                    System.out.println(Arrays.toString(getRandomInts(scanner.nextInt())));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 2:
+                    System.out.println(Arrays.toString(this.swapsEle(enterValueToArrayInt())));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 3:
+                    System.out.println(Arrays.toString(this.swapsIndexNegative(enterValueToArrayInt())));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 4:
+                    System.out.print("Nhập số phần tử của mảng: ");
+                    int sizeArr = scanner.nextInt();
+                    double[] arrDoubles = new double[sizeArr];
+                    for (int i = 0; i < arrDoubles.length; i++)
+                    {
+                        System.out.print("Nhập phần thử thứ " + i + ": ");
+                        arrDoubles[i] = scanner.nextDouble();
+                    }
+                    System.out.println(this.calcAverage(arrDoubles));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 5:
+                    System.out.println(Arrays.toString(this.sortDESC(enterValueToArrayInteger())));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 6:
+                    System.out.println(Arrays.toString(this.removeDuplicates(enterValueToArrayInteger())));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 7:
+                    System.out.print("Nhập từ khóa: ");
+                    System.out.println(Arrays.toString(this.getAllTimeZoneByPrefixName(scanner.nextLine())));
+                    System.out.println("Ấn enter để quay lại....");
+                    scanner.nextLine();
+                    break;
+                case 8:
+                    return;
+                default:
+                    System.out.println("Lựa chọn sai vui lòng chọn lại.");
+                    break;
+            }
+        }
+    }
+
+    public int[] enterValueToArrayInt() {
+        System.out.print("Nhập số phần tử của mảng: ");
+        int sizeArr = scanner.nextInt();
+        int[] arrInt = new int[sizeArr];
+        for (int i = 0; i < arrInt.length; i++)
+        {
+            System.out.print("Nhập phần thử thứ " + i + ": ");
+            arrInt[i] = scanner.nextInt();
+        }
+        return arrInt;
+    }
+
+    public Integer[] enterValueToArrayInteger() {
+        System.out.print("Nhập số phần tử của mảng: ");
+        int sizeArr = scanner.nextInt();
+        Integer[] arrInteger = new Integer[sizeArr];
+        for (int i = 0; i < arrInteger.length; i++)
+        {
+            System.out.print("Nhập phần thử thứ " + i + ": ");
+            arrInteger[i] = scanner.nextInt();
+        }
+        return arrInteger;
+    }
 
     // Ex 1
     public int[] getRandomInts(int elmNumber) {
@@ -67,22 +160,22 @@ public class ArrayController {
     // Ex 6
     public Integer[] removeDuplicates(Integer[] arr) {
         HashSet<Integer> integerHashSet = new HashSet<>(Arrays.asList(arr));
-        return integerHashSet.toArray(new Integer[] {});
+        return integerHashSet.toArray(new Integer[]{});
     }
 
     // Ex 7
     public String[] getAllTimeZoneByPrefixName(String prefix) {
         List<String> list = new ArrayList<>();
-        for (String timezone: TimeZone.getAvailableIDs()) {
+        for (String timezone : TimeZone.getAvailableIDs()) {
             if (timezone.startsWith(prefix)) {
+                timezone.replace(prefix, "");
                 list.add(timezone);
             }
         }
-        return list.toArray(new String[]{});
+        String[] results = list.toArray(new String[]{});
+        Arrays.sort(results);
+        return results;
     }
-
-    // Ex 8
-
 
 
     public static ArrayController getController() {

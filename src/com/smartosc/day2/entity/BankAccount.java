@@ -1,17 +1,10 @@
 package com.smartosc.day2.entity;
 
-import java.util.UUID;
-
 public class BankAccount {
-    private String id;
-    private String username;
     private double balance;
 
     public BankAccount() {
-    }
-
-    public BankAccount(String username, double balance) {
-        this.id = UUID.randomUUID().toString();
+        this.balance = 100000;
     }
 
     // Withdraw
@@ -20,15 +13,15 @@ public class BankAccount {
             System.out.println("Vui lòng nhập số lớn hơn 0.");
             return false;
         }
-        if (type.number == Type.WITHDRAW.getInt()) {
+        if (type.getInt()== Type.WITHDRAW.getInt()) {
             if (amount > this.balance) {
                 System.out.println("Số tiền bạn muốn rút lớn hơn số dư vui lòng thử lại!");
                 return false;
             }
-            this.balance -= amount;
+            this.withdraw(amount);
             return true;
-        } else if (type.number == Type.DEPOSIT.getInt()) {
-            this.balance += amount;
+        } else if (type.getInt() == Type.DEPOSIT.getInt()) {
+            this.deposit(amount);
             return true;
         }
 
@@ -37,7 +30,15 @@ public class BankAccount {
 
     }
 
-    enum Type {
+    public void withdraw(double amount) {
+        this.balance -= amount;
+    }
+
+    public void deposit(double amount) {
+        this.balance += amount;
+    }
+
+    public enum Type {
         WITHDRAW(1), DEPOSIT(0);
         private int number;
 
@@ -63,22 +64,6 @@ public class BankAccount {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
 }
