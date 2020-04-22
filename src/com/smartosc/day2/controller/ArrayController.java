@@ -2,11 +2,13 @@ package com.smartosc.day2.controller;
 
 import com.smartosc.utl.NumberUtil;
 
+import java.util.*;
+
 public class ArrayController {
     public static ArrayController instance;
 
     // Ex 1
-    public int[] getArraysInt(int elmNumber) {
+    public int[] getRandomInts(int elmNumber) {
         int[] ints = new int[elmNumber];
         for (int i = 0; i < elmNumber; i++) {
             ints[i] = NumberUtil.randomInt(elmNumber);
@@ -46,6 +48,41 @@ public class ArrayController {
         }
         return ints;
     }
+
+    // Ex 4
+    public double calcAverage(double[] doubles) {
+        double sum = 0;
+        for (double d : doubles) {
+            sum += d;
+        }
+        return sum / doubles.length;
+    }
+
+    // Ex 5
+    public Integer[] sortDESC(Integer[] ints) {
+        Arrays.sort(ints, Collections.reverseOrder());
+        return ints;
+    }
+
+    // Ex 6
+    public Integer[] removeDuplicates(Integer[] arr) {
+        HashSet<Integer> integerHashSet = new HashSet<>(Arrays.asList(arr));
+        return integerHashSet.toArray(new Integer[] {});
+    }
+
+    // Ex 7
+    public String[] getAllTimeZoneByPrefixName(String prefix) {
+        List<String> list = new ArrayList<>();
+        for (String timezone: TimeZone.getAvailableIDs()) {
+            if (timezone.startsWith(prefix)) {
+                list.add(timezone);
+            }
+        }
+        return list.toArray(new String[]{});
+    }
+
+    // Ex 8
+
 
 
     public static ArrayController getController() {

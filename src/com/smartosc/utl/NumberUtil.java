@@ -13,5 +13,4 @@ public class NumberUtil {
         Random random = new Random();
         return random.nextInt(bound);
     }
-
 }
