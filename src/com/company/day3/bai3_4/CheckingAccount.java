@@ -1,4 +1,4 @@
-package com.company.day3.bai3;
+package com.company.day3.bai3_4;
 
 class CheckingAccount {
     double deposit(double totalMoneyInAccount, double deposit) {

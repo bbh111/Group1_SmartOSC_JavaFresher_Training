@@ -1,4 +1,4 @@
-package com.company.day3.bai3;
+package com.company.day3.bai3_4;
 
 public class SavingsAccount extends BankAccount {
     private double balance;

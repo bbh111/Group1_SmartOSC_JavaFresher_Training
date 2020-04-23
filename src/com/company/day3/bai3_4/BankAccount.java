@@ -1,4 +1,4 @@
-package com.company.day3.bai3;
+package com.company.day3.bai3_4;
 
 class BankAccount extends CheckingAccount{
     private double totalMoneyInAccount = 3000;
