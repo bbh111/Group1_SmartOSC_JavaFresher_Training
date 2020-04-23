@@ -13,10 +13,10 @@ public class Main {
     }
 
     private void doMain() {
-        String choice = "-1";
+        String choice;
         do {
             options();
-            int choose = -1;
+            int choose;
             do {
                 try {
                     System.out.println("Your choice is :");
@@ -72,7 +72,7 @@ public class Main {
                     break;
                 case 8:
                     int choice8 = -1;
-                    String raw_choice8 = "-1";
+                    String raw_choice8;
                     do {
                         System.out.println("Welcome to Bank Program");
                         System.out.println("1.Deposit\n2.Withdraw\n3.View Balance\n4.Exit");

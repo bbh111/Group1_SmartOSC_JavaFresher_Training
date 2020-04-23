@@ -1,7 +1,5 @@
 package day2;
 
-import java.lang.reflect.Array;
-import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -34,7 +32,7 @@ public class Controller {
 
     // Cau 2
     public Integer[] exchangeTwoAdjacentElement(Integer[] originArray) {
-        int temp = 0;
+        int temp;
         for (int i = 0; i < originArray.length - 2; i += 2) {
             temp = originArray[i + 1];
             originArray[i + 1] = originArray[i];
@@ -46,8 +44,8 @@ public class Controller {
     //Cau 3
     public Integer[] changePositiveAndNegative(Integer[] orriginArray) {
         int count = 0;
-        for (int i = 0; i < orriginArray.length; i++) {
-            if (orriginArray[i] <= 0) {
+        for (Integer integer : orriginArray) {
+            if (integer <= 0) {
                 count += 1;
             }
         }
@@ -55,16 +53,16 @@ public class Controller {
         Integer[] positiveArray = new Integer[orriginArray.length - count];
         int idx1 = 0;
         int idx2 = 0;
-        for (int i = 0; i < orriginArray.length; i++) {
-            if (orriginArray[i] <= 0) {
+        for (Integer integer : orriginArray) {
+            if (integer <= 0) {
                 for (int j = 0; j < negativeArray.length; j++) {
-                    negativeArray[idx1] = orriginArray[i];
+                    negativeArray[idx1] = integer;
                     break;
                 }
                 idx1++;
             } else {
                 for (int j = 0; j < positiveArray.length; j++) {
-                    positiveArray[idx2] = orriginArray[i];
+                    positiveArray[idx2] = integer;
                 }
                 idx2++;
             }
@@ -73,12 +71,12 @@ public class Controller {
 
         Integer[] rsArray = new Integer[orriginArray.length];
         int tmp = 0;
-        for (int i = 0; i < positiveArray.length; i++) {
-            rsArray[tmp] = positiveArray[i];
+        for (Integer integer : positiveArray) {
+            rsArray[tmp] = integer;
             tmp += 1;
         }
-        for (int j = 0; j < negativeArray.length; j++) {
-            rsArray[tmp] = negativeArray[j];
+        for (Integer integer : negativeArray) {
+            rsArray[tmp] = integer;
             tmp += 1;
         }
         return rsArray;
