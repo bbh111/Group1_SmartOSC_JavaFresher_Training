@@ -49,6 +49,7 @@ public class Functions {
             System.out.print(a + " ");
         }
         return array;
+
     }
 
     //Bài 2

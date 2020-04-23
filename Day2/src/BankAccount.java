@@ -12,7 +12,6 @@ public class BankAccount
         this.balance = balance;
     }
 
-
     public void depositMoney(double money)
     {
         this.balance += money;

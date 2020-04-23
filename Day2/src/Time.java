@@ -19,12 +19,6 @@ public class Time {
 
     public int countMinutes()
     {
-        if (this.hour != 23 && this.minutes != 59)
-        {
-            return ( this.hour * 60 ) + this.minutes ;
-        } else
-        {
-            return this.hour * 60 + this.minutes - 1;
-        }
+        return ( this.hour * 60 ) + this.minutes ;
     }
 }
