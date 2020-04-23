@@ -1,22 +1,14 @@
 package com.fitech;
 
 public class BankAccount {
+    protected double balance;
 
-    private double balance;
-
-    public BankAccount() {
+    public void deposit(double amount) {
+        balance += amount;
     }
 
-    public BankAccount(double balance) {
-        this.balance = balance;
-    }
-
-    public void deposit() {
-
-    }
-
-    public void withdraw() {
-
+    public void withdrawal(double amount) {
+        balance -= amount;
     }
 
     @Override
