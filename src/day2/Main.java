@@ -76,16 +76,12 @@ public class Main {
                     do {
                         System.out.println("Welcome to Bank Program");
                         System.out.println("1.Deposit\n2.Withdraw\n3.View Balance\n4.Exit");
-
                         try {
-
                             raw_choice8 = sc.nextLine();
-
                             choice8 = Integer.parseInt(raw_choice8);
                         } catch (NumberFormatException e) {
                             System.out.println("Must be a number");
                         }
-
                         switch (choice8) {
                             case 1:
                                 System.out.println("Enter your money which you want to deposit");
@@ -155,8 +151,8 @@ public class Main {
         System.out.println("6.Removes duplicate elements in array");
         System.out.println("7.Make a collection of America TimeZone");
         System.out.println("8.Bank Program");
-        System.out.println("9.day2.Time Program");
-        System.out.println("10.Input day2.Person Data");
+        System.out.println("9.Time Program");
+        System.out.println("10.Person Data");
         System.out.println("11.Exit");
         System.out.println("Please choose 1 option !!!");
         System.out.println("========================================================");
