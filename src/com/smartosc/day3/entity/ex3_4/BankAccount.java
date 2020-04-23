@@ -25,13 +25,9 @@ public abstract class BankAccount {
         return false;
     }
 
-    public double earnMonthlyInterest(double principal, double rate, double time) {
-        double emi;
-        rate = rate / (12 * 100); // one month interest
-        time = time * 12; // one month period
-         emi = (principal * rate * (float)Math.pow(1 + rate, time))
-                / (float)(Math.pow(1 + rate, time) - 1);
-        this.balance += emi;
-        return emi;
+    public double earnMonthlyInterest() {
+        double rateForMonthly = 0.1;
+        this.balance += this.balance * rateForMonthly;
+        return rateForMonthly;
     }
 }
