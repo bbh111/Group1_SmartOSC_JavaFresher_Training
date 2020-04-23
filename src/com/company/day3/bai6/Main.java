@@ -7,6 +7,6 @@ public class Main {
 
         shape1.centerPoint();
         shape2.centerPoint();
-        
+
     }
 }
