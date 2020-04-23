@@ -5,22 +5,23 @@ public class BankAccount {
 
 
     public BankAccount() {
-        this.balance = 100 ;
+        this.balance = 100;
     }
 
     public double getBalance() {
         return balance;
     }
-    public void depositMoney(double money){
+
+    public void depositMoney(double money) {
         this.balance += money;
     }
 
-    public void withdrawMoney(double money){
-        if(money>this.balance){
+    public void withdrawMoney(double money) {
+        if (money > this.balance) {
             System.out.println("Your money has not enough !!!");
-        }else{
+        } else {
             this.balance -= money;
-            System.out.println("Withdraw $"+money+" successfully");
+            System.out.println("Withdraw $" + money + " successfully");
         }
     }
 

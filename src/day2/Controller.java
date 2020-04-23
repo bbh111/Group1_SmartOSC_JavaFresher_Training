@@ -111,7 +111,7 @@ public class Controller {
     }
 
     //Cau 7
-    public String[] getAllTimeZonesInAmerica() {
+    public void getAllTimeZonesInAmerica() {
         String[] timeZone = java.util.TimeZone.getAvailableIDs();
         String prefix = "America/";
         int count = 0;
@@ -126,11 +126,12 @@ public class Controller {
         for (String s : timeZone
         ) {
             if (s.contains(prefix)) {
-                rs[i] = s.replace("s",prefix);
+                rs[i] = s.replace(prefix,"");
                 i += 1;
             }
         }
-        return rs;
+        System.out.println(Arrays.toString(rs));
+
     }
 
     //Cau 8

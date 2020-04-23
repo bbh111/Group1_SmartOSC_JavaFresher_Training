@@ -68,7 +68,7 @@ public class Main {
                     break;
                 case 7:
                     System.out.println("All TimeZone of America : ");
-                    Arrays.toString(c.getAllTimeZonesInAmerica());
+                    c.getAllTimeZonesInAmerica();
                     break;
                 case 8:
                     int choice8 = -1;
