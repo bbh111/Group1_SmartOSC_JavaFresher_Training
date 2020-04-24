@@ -1,4 +1,5 @@
 package com.fitech;
 
-public class UnitConversion {
+public abstract class UnitConversion {
+    public abstract double conversion(double value);
 }

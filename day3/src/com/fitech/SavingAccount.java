@@ -5,25 +5,29 @@ public class SavingAccount extends BankAccount{
 
     public void deposit(double amount) {
         if (transactionCount != 0) {
-            balance += amount;
+            super.deposit(amount);
             this.transactionCount --;
         } else {
-            balance += amount - 1;
+            balance -= amount -1;
         }
     }
 
     public void withdrawal(double amount) {
         if (transactionCount != 0) {
-            balance -= amount;
+            super.withdrawal(amount);
             this.transactionCount --;
         } else {
             balance -= amount + 1;
         }
     }
 
+    public void updateTransactionCount() {
+        transactionCount = 3;
+    }
+
     public void earnMonthlyInterest() {
         double rate = 0.1;
         balance += balance*rate;
-        transactionCount = 3;
+        updateTransactionCount();
     }
 }

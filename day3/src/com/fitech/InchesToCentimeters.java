@@ -1,7 +1,9 @@
 package com.fitech;
 
 public class InchesToCentimeters extends UnitConversion {
-    public static double inchesToCentimeters(double inches) {
-        return inches*2.54;
+
+    @Override
+    public double conversion(double value) {
+        return value*2.54;
     }
 }

@@ -11,6 +11,10 @@ public class BankAccount {
         balance -= amount;
     }
 
+    public boolean check() {
+        return balance > 0;
+    }
+
     @Override
     public String toString() {
         return "BankAccount{" +

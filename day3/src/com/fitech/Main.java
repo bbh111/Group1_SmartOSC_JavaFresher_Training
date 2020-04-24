@@ -36,13 +36,13 @@ public class Main {
                 case 2:
                     System.out.println("enter amount of inches: ");
                     inches = sc.nextDouble();
-                    System.out.println(inches + " inches = " + InchesToCentimeters.inchesToCentimeters(inches) + " centimeters");
+                    System.out.println(inches + " inches = " + new InchesToCentimeters().conversion(inches) + " centimeters");
                     System.out.println("enter amount of gallons: : ");
                     gallons = sc.nextDouble();
-                    System.out.println(gallons + " gallons = " + GallonsToLiters.gallonsToLiters(gallons) + " liters");
+                    System.out.println(gallons + " gallons = " + new GallonsToLiters().conversion(gallons) + " liters");
                     System.out.println("enter amount of miles: ");
                     miles = sc.nextDouble();
-                    System.out.println(miles + " miles = " + MilesToKilometers.milesToKilometers(miles) + " kilometers");
+                    System.out.println(miles + " miles = " + new MilesToKilometers().conversion(miles) + " kilometers");
                     break;
                 case 3:
                     int c;
@@ -59,11 +59,13 @@ public class Main {
                             case 1:
                                 System.out.println("enter amount: ");
                                 checkingAccount.deposit(sc.nextDouble());
+                                checkingAccount.charge();
                                 System.out.println(checkingAccount.toString());
                                 break;
                             case 2:
                                 System.out.println("enter amount: ");
                                 checkingAccount.withdrawal(sc.nextDouble());
+                                checkingAccount.charge();
                                 System.out.println(checkingAccount.toString());
                                 break;
                             case 3:
@@ -100,7 +102,6 @@ public class Main {
                             case 4:
                                 System.out.println(savingAccount.toString());
                                 break;
-
                         }
                     } while (c != 0);
                     break;
