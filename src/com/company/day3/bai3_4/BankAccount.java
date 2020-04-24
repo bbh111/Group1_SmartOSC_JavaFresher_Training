@@ -1,29 +1,64 @@
 package com.company.day3.bai3_4;
 
-class BankAccount extends CheckingAccount{
-    private double totalMoneyInAccount = 3000;
+class BankAccount {
+    protected double balance;
+    protected int countTransition;
     private double deposit;
     private double withdrawal;
 
-    double getTotalMoneyInAccount() {
-        return totalMoneyInAccount;
+    public double getBalance() {
+        return balance;
     }
 
-    double getDeposit() {
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getCountTransition() {
+        return countTransition;
+    }
+
+    public void setCountTransition(int countTransition) {
+        this.countTransition = countTransition;
+    }
+
+    public double getDeposit() {
         return deposit;
     }
 
-    void setDeposit(double deposit) {
+    public void setDeposit(double deposit) {
         this.deposit = deposit;
     }
 
-    double getWithdrawal() {
+    public double getWithdrawal() {
         return withdrawal;
     }
 
-    void setWithdrawal(double withdrawal) {
+    public void setWithdrawal(double withdrawal) {
         this.withdrawal = withdrawal;
     }
 
+    BankAccount() {
+        this.balance = 3000;
+        this.countTransition = 3;
+    }
 
+    public double withdraw(double amount) {
+        if (0 < amount && amount < this.balance) {
+            return this.balance -= amount;
+        }
+        return 0;
+    }
+
+    public double deposit(double amount) {
+        if (0 < amount) {
+            return this.balance += amount;
+        }
+        return 0;
+    }
+
+    public double earnMonthlyInterest() {
+        double interestRate = 0.1;
+        return this.balance * (interestRate / 12) * 12;
+    }
 }

@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        CheckingAccount checkingAccount = new CheckingAccount();
         SavingsAccount account = new SavingsAccount();
-        account.setBalance(3000);
         Scanner sc = new Scanner(System.in);
-        double currentMoney = account.getBalance();
-        int transaction = account.getFree();
+        double currentMoney = checkingAccount.getBalance();
+        int transaction = account.getCountTransition();
 
         System.out.println("Current total money in your account: " + currentMoney + "$");
         System.out.println("Our's services: \n\t1.Deposit.\n\t2.Withdrawal.");
@@ -19,32 +19,36 @@ public class Main {
             int select = sc.nextInt();
             switch (select) {
                 case 1:
-                    System.out.println("Enter deposit(Deposit must be smaller than total money in your account): ");
+                    System.out.print("Enter deposit(Deposit must be smaller than total money in your account): ");
                     account.setDeposit(sc.nextDouble());
-                    currentMoney = account.deposit(currentMoney, account.getDeposit());
+                    currentMoney = account.deposit(account.getDeposit());
                     System.out.println("Total money: " + currentMoney + "$");
-                    transaction--;
                     account.setBalance(currentMoney);
+                    transaction--;
+                    System.out.println("CountTransition: " + transaction);
                     if (transaction < 1) {
                         System.out.println("Charges: 1$");
-                        account.earnMonthlyInterest();
-                        System.out.println("Total money after depositing: " + account.getBalance() + "$");
+                        account.setBalance(currentMoney + account.earnMonthlyInterest());
+                        double balance = checkingAccount.charges(account.getBalance());
+                        System.out.println("Total money after depositing: " + balance + "$");
                     } else {
                         System.out.println("Free charges.");
                         System.out.println("Total money after depositing: " + currentMoney + "$");
                     }
                     break;
                 case 2:
-                    System.out.println("Enter withdrawal(Withdrawal must be smaller than total money in your account): ");
+                    System.out.print("Enter withdrawal(Withdrawal must be smaller than total money in your account): ");
                     account.setWithdrawal(sc.nextDouble());
-                    currentMoney = account.withdrawal(currentMoney, account.getWithdrawal());
+                    currentMoney = account.withdraw(account.getWithdrawal());
                     System.out.println("Total money: " + currentMoney + "$");
-                    transaction--;
                     account.setBalance(currentMoney);
+                    transaction--;
+                    System.out.println("CountTransition: " + transaction);
                     if (transaction < 1) {
                         System.out.println("Charges: 1$");
-                        account.earnMonthlyInterest();
-                        System.out.println("Total money after withdrawing: " + account.getBalance() + "$");
+                        account.setBalance(currentMoney + account.earnMonthlyInterest());
+                        double balance = checkingAccount.charges(account.getBalance());
+                        System.out.println("Total money after withdrawing: " + balance + "$");
                     } else {
                         System.out.println("Free charges.");
                         System.out.println("Total money after withdrawing: " + currentMoney + "$");

@@ -2,11 +2,11 @@ package com.company.day3.bai6;
 
 public class Main {
     public static void main(String[] args) {
-        Shape shape1 = new Circle();
-        Shape shape2 = new Rectangle();
+        Rectangle rectangle = new Rectangle(10.37489273,20.683749283);
+        rectangle.centerPoint();
 
-        shape1.centerPoint();
-        shape2.centerPoint();
+        Circle circle = new Circle(40.5973462987563,59.648327643);
+        circle.centerPoint();
 
     }
 }

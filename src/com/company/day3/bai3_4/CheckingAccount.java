@@ -1,15 +1,10 @@
 package com.company.day3.bai3_4;
 
-class CheckingAccount {
-    double deposit(double totalMoneyInAccount, double deposit) {
-        return totalMoneyInAccount + deposit;
+class CheckingAccount extends BankAccount{
+    public CheckingAccount() {
+        super();
     }
-
-    public double withdrawal(double totalMoneyInAccount, double withdrawal) {
-        return totalMoneyInAccount - withdrawal;
-    }
-
-    public double Charges(double money) {
-        return money - 1;
+    public double charges(double balance) {
+        return balance - 1;
     }
 }
