@@ -3,6 +3,7 @@ package com.smartosc.day3;
 import com.smartosc.day3.entity.ex1_2.*;
 import com.smartosc.day3.entity.ex3_4.*;
 import com.smartosc.day3.entity.ex5.LabeledPoint;
+import com.smartosc.day3.entity.ex5.Point;
 import com.smartosc.day3.entity.ex6.Circle;
 import com.smartosc.day3.entity.ex6.Rectangle;
 import com.smartosc.day3.entity.ex6.Shape;
@@ -80,15 +81,15 @@ public class Main {
                     float x = scanner.nextFloat();
                     System.out.println("Nhập tọa độ y: ");
                     float y = scanner.nextFloat();
-                    LabeledPoint labeledPoint = new LabeledPoint(x, y, name);
+                    Point labeledPoint = new LabeledPoint(x, y, name);
                     System.out.println(labeledPoint.toString());
                     break;
                 case 8:
-                    shape = new Rectangle();
+                    shape = new Rectangle(10, 3);
                     shape.centerPoint();
                     break;
                 case 9:
-                    shape = new Circle();
+                    shape = new Circle(1, 2);
                     shape.centerPoint();
                     break;
                 case 0:
