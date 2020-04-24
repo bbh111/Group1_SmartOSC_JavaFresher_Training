@@ -3,10 +3,12 @@ package com.smartosc.day3.entity.ex3_4;
 public abstract class BankAccount {
     protected double balance;
     protected int countTransition;
+    protected double rateForMonthly;
 
     public BankAccount() {
         this.balance = 100;
         this.countTransition = 3;
+        rateForMonthly = 0.1;
     }
 
     public boolean withdraw(double amount) {
@@ -26,8 +28,20 @@ public abstract class BankAccount {
     }
 
     public double earnMonthlyInterest() {
-        double rateForMonthly = 0.1;
-        this.balance += this.balance * rateForMonthly;
-        return rateForMonthly;
+        double interestMonth = this.balance * this.rateForMonthly;
+        this.balance += interestMonth;
+        return interestMonth;
+    }
+
+    protected void charges(double amount) {
+        if (this.countTransition == 0) {
+            this.balance -= amount;
+        } else {
+            this.countTransition--;
+        }
+    }
+
+    public double getBalance() {
+        return this.balance;
     }
 }

@@ -5,16 +5,13 @@ public class CheckingAccount extends BankAccount {
         super();
     }
 
-    public void charges() {
-        if (this.countTransition == 0) {
-            this.balance--;
-        } else {
-            this.countTransition--;
+    @Override
+    public boolean withdraw(double amount) {
+        boolean isDone = super.withdraw(amount);
+        if (isDone) {
+            this.charges(1);
         }
-    }
-
-    public double getBalance() {
-        return this.balance;
+        return isDone;
     }
 }
 

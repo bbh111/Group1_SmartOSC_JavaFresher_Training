@@ -15,8 +15,7 @@ public class Main {
     public static void main(String[] args) {
         UnitConversion conversion;
         Shape shape;
-        CheckingAccount checkingAccount = new CheckingAccount();
-        SavingsAccount savingsAccount = new SavingsAccount();
+        BankAccount bankAccount;
         while (true) {
             System.out.println("===== BÀI TẬP DAY 3 =====");
             System.out.println("1. Inch sang cm. (Ex1,2)");
@@ -45,29 +44,33 @@ public class Main {
                     enterValue(conversion);
                     break;
                 case 4:
+                    bankAccount = new CheckingAccount();
                     System.out.println("Nhập số tiền bạn muốn rút: ");
-                    if (checkingAccount.withdraw(scanner.nextDouble())){
+                    if (bankAccount.withdraw(scanner.nextDouble())){
                         System.out.println("Rút tiền thành công!");
-                        checkingAccount.charges();
-                        System.out.println(String.format("Số dư hiện tại còn: %s", checkingAccount.getBalance()));
+                        System.out.println(String.format("Số dư hiện tại còn: %s", bankAccount.getBalance()));
                     } else {
                         System.out.println("Rút tiền thất bại!");
                     }
                     break;
                 case 5:
+                    bankAccount = new CheckingAccount();
                     System.out.println("Nhập số tiền bạn muốn gửi: ");
-                    if (checkingAccount.deposit(scanner.nextDouble())){
+                    if (bankAccount.deposit(scanner.nextDouble())){
                         System.out.println("Gửi tiền thành công!");
-                        checkingAccount.charges();
-                        System.out.println(String.format("Số dư hiện tại còn: %s", checkingAccount.getBalance()));
+                        System.out.println(String.format("Số dư hiện tại còn: %s", bankAccount.getBalance()));
                     } else {
                         System.out.println("Gửi tiền thất bại!");
                     }
                     break;
                 case 6:
-                    if (savingsAccount.execute()) {
-                       checkingAccount.charges();
-                       savingsAccount.resetCountTransition();
+                    bankAccount = new SavingsAccount();
+                    System.out.println(String.format("Số dư trong tài khoản hiện tại: %s", bankAccount.getBalance()));
+                    double result = bankAccount.earnMonthlyInterest();
+                    if(result > 0) {
+                        System.out.println("Thêm tiền lãi thành công!");
+                        System.out.println(String.format("Số tiền lãi tháng là: %s$", result));
+                        System.out.println(String.format("Số dư hiện tại là: %s$", bankAccount.getBalance()));
                     }
                     break;
                 case 7:
