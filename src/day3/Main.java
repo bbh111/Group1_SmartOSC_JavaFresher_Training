@@ -1,5 +1,6 @@
 package day3;
 
+import javax.management.ObjectInstance;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -104,26 +105,27 @@ public class Main {
                                 System.out.println("Must be number from 1-5");
                             }
                         } while (Integer.parseInt(choice2) != 6);
+                        double money = 100;
                         switch (choose2) {
                             case 1:
                                 System.out.println("Enter the money that you want to deposit: ");
                                 double money1 = scanner.nextDouble();
                                 scanner.nextLine();
-                                BankAccount bankAccount1 = new CheckingAccount();
-                                ((CheckingAccount) bankAccount1).deposit(money1);
+                                BankAccount bankAccount1 = new CheckingAccount(money);
+                                 bankAccount1.deposit(money1);
                                 System.out.println("Deposit " + money1 + "$ into your balance. You have " + bankAccount1.getBalances());
                                 break;
                             case 2:
                                 System.out.println("Enter the money that you want to withdraw: ");
                                 double money2 = 0;
-                                BankAccount bankAccount2 = new CheckingAccount();
+                                BankAccount bankAccount2 = new CheckingAccount(money);
                                 try {
                                     money2 = scanner.nextDouble();
                                     scanner.nextLine();
                                     if (money2 > bankAccount2.getBalances()) {
                                         throw new Exception();
                                     }
-                                    ((CheckingAccount) bankAccount2).withdraw(money2);
+                                     bankAccount2.withdraw(money2);
                                     System.out.println("Withdraw " + money2 + "$ from your balances. You have " + bankAccount2.getBalances());
                                 } catch (Exception e) {
                                     System.out.println("Not enough money");
@@ -133,14 +135,14 @@ public class Main {
                                 System.out.println("Enter the money that you want to deposit: ");
                                 double money3 = scanner.nextDouble();
                                 scanner.nextLine();
-                                BankAccount bankAccount3 = new SavingAccount();
-                                ((SavingAccount) bankAccount3).deposit(money3);
+                                BankAccount bankAccount3 = new SavingAccount(money);
+                                bankAccount3.deposit(money3);
                                 System.out.println("Deposit " + money3 + "$ from your balances. You have " + bankAccount3.getBalances());
                                 System.out.println("You have " + SavingAccount.getCount() + " free times ");
                                 break;
                             case 4:
                                 System.out.println("Enter the money that you want to withdraw: ");
-                                BankAccount bankAccount4 = new SavingAccount();
+                                BankAccount bankAccount4 = new SavingAccount(money);
                                 double money4 = 0;
                                 try {
                                     money4 = scanner.nextDouble();
@@ -148,7 +150,7 @@ public class Main {
                                     if (money4 > bankAccount4.getBalances()) {
                                         throw new Exception();
                                     }
-                                    ((SavingAccount) bankAccount4).withdraw(money4);
+                                     bankAccount4.withdraw(money4);
                                     System.out.println("Withdraw " + money4 + "$ from your balances. You have " + bankAccount4.getBalances());
                                     System.out.println("You have " + SavingAccount.getCount() + " free times ");
                                 } catch (Exception e) {
@@ -157,7 +159,7 @@ public class Main {
                                 break;
                             case 5:
                                 System.out.println("Check the interest money earn Monthly");
-                                BankAccount bankAccount5 = new SavingAccount();
+                                BankAccount bankAccount5 = new SavingAccount(money);
                                 System.out.println("This money you earn " + ((SavingAccount) bankAccount5).earnMonthlyInteres() + "$");
                                 System.out.println("You have 3 free deposit or withdraw times");
                                 break;
@@ -176,8 +178,19 @@ public class Main {
                     lb.Display();
                     break;
                 case 4:
-                    Shape shape1 = new Rectangle();
-                    System.out.println("This is centerpoint of Rectangle "+((Rectangle)shape1).centerPoint());
+                    System.out.println("Enter your start point: A(x,y)");
+                    System.out.println("Enter x:");
+                    double xRectangle = checkInput();
+                    System.out.println("Enter y:");
+                    double yRectangle = checkInput();
+                    Shape shape1 = new Rectangle(new Point(xRectangle,yRectangle));
+                    System.out.println("Enter width: ");
+                    //shape1.setWidth(scanner.nextInt());
+                    ((Rectangle) shape1).setWidth(scanner.nextInt());
+                    System.out.println("Enter height: ");
+                    ((Rectangle)shape1).setHeight(scanner.nextInt());
+                    Point a = new Point(xRectangle,yRectangle);
+                    System.out.println("This is centerpoint of Rectangle "+((Rectangle)shape1).centerPoint(true,true));
                     Shape shape2 = new Circle();
                     System.out.println("This is centerpoint of Circle "+((Circle)shape2).centerPoint());
                     break;
@@ -209,5 +222,6 @@ public class Main {
         }while (true);
         return rs;
     }
+
 }
 

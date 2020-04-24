@@ -2,6 +2,11 @@ package day3;
 
 public class SavingAccount extends BankAccount {
     private static int count=3;
+    private double rate = 0.01;
+
+    public SavingAccount(double balances) {
+        super(balances);
+    }
 
     public static int getCount() {
         return count;
@@ -15,11 +20,10 @@ public class SavingAccount extends BankAccount {
     public double deposit(double money) {
         if (count <= 3) {
             count-=1;
-            super.setBalances(super.getBalances()+money);
+            super.balances =  super.getBalances()+money;
             return super.getBalances() + money;
         } else {
-
-            super.setBalances((super.getBalances()+money-1));
+            super.balances = super.getBalances()+money-1;
             return super.getBalances() + money - 1;
         }
     }
@@ -28,19 +32,18 @@ public class SavingAccount extends BankAccount {
     public double withdraw(double money) {
         if (count <= 3) {
             count-=1;
-            super.setBalances(super.getBalances()-money);
+            super.balances =  super.getBalances()-money;
             return super.getBalances() - money;
         } else {
-
-            super.setBalances((super.getBalances()-money-1));
+            super.balances = super.getBalances()-money-1;
             return super.getBalances() - money - 1;
         }
     }
 
     public double earnMonthlyInteres(){
         this.count = 3;
-        double rs = super.getBalances()*super.getRate();
-        super.setBalances(super.getBalances()+super.getBalances()*super.getRate());
+        double rs = super.getBalances()*this.rate;
+        super.balances = super.getBalances()+super.getBalances()*this.rate;
         return rs;
     }
 }

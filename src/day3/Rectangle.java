@@ -31,12 +31,26 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
-    public Rectangle() {
+    public Rectangle(Point pointA) {
+        this.pointA = pointA;
     }
-
 
     @Override
     public String centerPoint() {
-        return (new Point(30,2).toString());
+        return null;
     }
+
+    public String centerPoint(boolean widthRight, boolean heightUp) {
+        if(widthRight&&heightUp){
+            return new Point((this.getPointA().getX()+this.width)/2,(this.getPointA().getY()+this.height)/2).toString();
+        }else if(!widthRight&&heightUp){
+            return new Point((this.getPointA().getX()-this.width)/2,(this.getPointA().getY()+this.height)/2).toString();
+        }else if(widthRight&&!heightUp){
+            return new Point((this.getPointA().getX()+this.width)/2,(this.getPointA().getY()-this.height)/2).toString();
+        }else{
+            return new Point((this.getPointA().getX()-this.width)/2,(this.getPointA().getY()-this.height)/2).toString();
+        }
+    }
+
+
 }
