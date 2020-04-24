@@ -7,10 +7,10 @@ public class Main {
 
 
         int option = 0;
-        do{
+        do {
             controller.menu();
-            option = controller.valid.checkTime("Enter your choose: ",Integer.MIN_VALUE,Integer.MAX_VALUE,"Wrong");
-            switch (option){
+            option = controller.valid.checkTime("Enter your choose: ", Integer.MIN_VALUE, Integer.MAX_VALUE, "Wrong");
+            switch (option) {
                 case 1:
                     controller.convertUnit();
                     break;
@@ -30,7 +30,7 @@ public class Main {
                     controller.shapeClass();
                     break;
             }
-        }while (option >= 1 && option <= 6);
+        } while (option >= 1 && option <= 6);
 
     }
 }
