@@ -85,7 +85,7 @@ public class Controller {
 
     //Bài tập 4
     public void savingAccount() {
-        SavingAccount account = new SavingAccount(10000);
+        BankAccount account = new SavingAccount(10000);
         int option = 0;
         do {
             menuBank();
@@ -100,7 +100,7 @@ public class Controller {
                     account.withdraw();
                     break;
                 case 3:
-                    System.out.println("MonthlyInterest: " + account.earnMonthlyInterest());
+                    System.out.println("MonthlyInterest: " + ((SavingAccount)account).earnMonthlyInterest());
                     ;
                     break;
             }
