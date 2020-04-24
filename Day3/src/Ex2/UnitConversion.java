@@ -1,22 +1,7 @@
 package Ex2;
 
-public class UnitConversion
+public abstract class UnitConversion
 {
-    public double inchesToCentimet(double inches)
-    {
-        double centimet = 2.54 * inches;
-        return centimet;
-    }
+    public abstract double conversion(double var);
 
-    public double gallonToLiters(double gallon)
-    {
-        double litter = 4.5461 * gallon;
-        return litter;
-    }
-
-    public double  milesToKilometers(double miles)
-    {
-        double centimet = 1.6093 * miles;
-        return centimet;
-    }
 }

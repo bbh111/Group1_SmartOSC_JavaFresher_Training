@@ -2,9 +2,9 @@ package Ex2;
 
 public class InchesToCentimet extends UnitConversion
 {
-    public double inchesToCentimet(double n)
+    public double conversion(double inches)
     {
-        return super.inchesToCentimet(n);
+        return 2.54  * inches;
     }
 }
 

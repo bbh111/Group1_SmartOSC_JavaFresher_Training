@@ -8,7 +8,7 @@ public class CheckingAccount extends BankAccount
     {
         double depositMoneyCharges = super.depositMoney(money) - 1;
         super.setBalance(depositMoneyCharges);
-        return depositMoneyCharges;
+        return super.getBalance();
     }
 
     public double withdrawMoneyCharges(double money)

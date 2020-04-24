@@ -1,8 +1,14 @@
 package Ex6;
 
 public class Circle extends Shape {
+    private double r;
+
+    public Circle(double r) {
+        this.r = r;
+    }
+
     @Override
     public void centerPoint() {
-        System.out.println("Đây là center point hình tròn");
+        System.out.println("(" + r + "," + r + ")");
     }
 }

@@ -16,22 +16,33 @@ public class BankAccount
 
     public double depositMoney(double money)
     {
-        double depositMoney = this.balance + money ;
-        setBalance(depositMoney);
-        return depositMoney;
+//        double depositMoney = this.balance + money ;
+//        setBalance(depositMoney);
+//        return depositMoney;
+        this.balance += money;
+        return this.balance;
     }
 
     public double withdrawMoney(double money)
     {
-        double withdrawMoney = 0;
+//        double withdrawMoney = 0;
+//        if(money > this.balance)
+//        {
+//            System.out.println("Số tiền của bạn không đủ để rút !!!");
+//        }else
+//        {
+//            withdrawMoney = this.balance - money;
+//            setBalance(withdrawMoney);
+//        }
+//        return withdrawMoney;
+
         if(money > this.balance)
         {
             System.out.println("Số tiền của bạn không đủ để rút !!!");
         }else
         {
-            withdrawMoney = this.balance - money;
-            setBalance(withdrawMoney);
+            this.balance -=  money;
         }
-        return withdrawMoney;
+        return this.balance;
     }
 }

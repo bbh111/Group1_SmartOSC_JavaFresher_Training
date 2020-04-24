@@ -2,8 +2,8 @@ package Ex2;
 
 public class GallonToLiters extends UnitConversion
 {
-    public double gallonToLiters(double n)
+    public double conversion(double gallon)
     {
-        return super.gallonToLiters(n);
+        return 4.5461  * gallon;
     }
 }
