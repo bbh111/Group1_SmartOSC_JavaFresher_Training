@@ -46,64 +46,12 @@ public class Main {
                     break;
                 case 3:
                     int c;
-                    CheckingAccount checkingAccount = new CheckingAccount();
-                    do {
-                        System.out.println("Enter 0 to exit");
-                        System.out.println("Enter 1 to deposit");
-                        System.out.println("Enter 2 to withdrawal");
-                        System.out.println("Enter 3 to watch your balance");
-                        System.out.println("Please enter a number: ");
-                        c = sc.nextInt();
-                        switch (c) {
-                            case 0: break;
-                            case 1:
-                                System.out.println("enter amount: ");
-                                checkingAccount.deposit(sc.nextDouble());
-                                checkingAccount.charge();
-                                System.out.println(checkingAccount.toString());
-                                break;
-                            case 2:
-                                System.out.println("enter amount: ");
-                                checkingAccount.withdrawal(sc.nextDouble());
-                                checkingAccount.charge();
-                                System.out.println(checkingAccount.toString());
-                                break;
-                            case 3:
-                                System.out.println(checkingAccount.toString());
-                                break;
-                        }
-                    } while (c != 0);
+                    BankAccount checkingAccount = new CheckingAccount();
+                    accountAction(sc, checkingAccount);
                     break;
-                    case 4:
-                    SavingAccount savingAccount = new SavingAccount();
-                    do {
-                        System.out.println("Enter 0 to exit");
-                        System.out.println("Enter 1 to deposit");
-                        System.out.println("Enter 2 to withdrawal");
-                        System.out.println("Enter 3 to earn monthly interest");
-                        System.out.println("Enter 4 to watch your balance");
-                        System.out.println("Please enter a number: ");
-                        c = sc.nextInt();
-                        switch (c) {
-                            case 0: break;
-                            case 1:
-                                System.out.println("enter amount: ");
-                                savingAccount.deposit(sc.nextDouble());
-                                System.out.println(savingAccount.toString());
-                                break;
-                            case 2:
-                                System.out.println("enter amount: ");
-                                savingAccount.withdrawal(sc.nextDouble());
-                                System.out.println(savingAccount.toString());
-                                break;
-                            case 3:
-                                savingAccount.earnMonthlyInterest();
-                                System.out.println(savingAccount.toString());
-                            case 4:
-                                System.out.println(savingAccount.toString());
-                                break;
-                        }
-                    } while (c != 0);
+                case 4:
+                    BankAccount savingAccount = new SavingAccount();
+                    accountAction(sc, savingAccount);
                     break;
                 case 5:
                     sc.nextLine();
@@ -125,5 +73,33 @@ public class Main {
                 default:break;
             }
         } while (choose != 0);
+    }
+
+    private static void accountAction(Scanner sc, BankAccount savingAccount) {
+        int c;
+        do {
+            System.out.println("Enter 0 to exit");
+            System.out.println("Enter 1 to deposit");
+            System.out.println("Enter 2 to withdrawal");
+            System.out.println("Enter 3 to watch your balance");
+            System.out.println("Please enter a number: ");
+            c = sc.nextInt();
+            switch (c) {
+                case 0: break;
+                case 1:
+                    System.out.println("enter amount: ");
+                    savingAccount.deposit(sc.nextDouble());
+                    System.out.println(savingAccount.toString());
+                    break;
+                case 2:
+                    System.out.println("enter amount: ");
+                    savingAccount.withdrawal(sc.nextDouble());
+                    System.out.println(savingAccount.toString());
+                    break;
+                case 3:
+                    System.out.println(savingAccount.toString());
+                    break;
+            }
+        } while (c != 0);
     }
 }

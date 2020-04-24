@@ -3,16 +3,18 @@ package com.fitech;
 public class BankAccount {
     protected double balance;
 
-    public void deposit(double amount) {
+    public boolean deposit(double amount) {
         balance += amount;
+        return true;
     }
 
-    public void withdrawal(double amount) {
-        balance -= amount;
-    }
-
-    public boolean check() {
-        return balance > 0;
+    public boolean withdrawal(double amount) {
+        if (amount > balance) {
+            return false;
+        } else {
+            balance -= amount;
+        }
+        return true;
     }
 
     @Override

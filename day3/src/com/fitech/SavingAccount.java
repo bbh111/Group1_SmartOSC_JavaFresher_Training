@@ -3,21 +3,38 @@ package com.fitech;
 public class SavingAccount extends BankAccount{
     private int transactionCount = 3;
 
-    public void deposit(double amount) {
+    private int count = 30;
+
+    public boolean checkEarnMonthlyInterest() {
+        count--;
+        return count < 0;
+    }
+
+    public void chargeCount() {
+        transactionCount--;
+    }
+
+    public boolean deposit(double amount) {
+        if (checkEarnMonthlyInterest()) {
+            earnMonthlyInterest();
+        }
         if (transactionCount != 0) {
-            super.deposit(amount);
-            this.transactionCount --;
+            chargeCount();
+            return super.deposit(amount);
         } else {
-            balance -= amount -1;
+            return super.deposit(amount -1);
         }
     }
 
-    public void withdrawal(double amount) {
+    public boolean withdrawal(double amount) {
+        if (checkEarnMonthlyInterest()) {
+            earnMonthlyInterest();
+        }
         if (transactionCount != 0) {
-            super.withdrawal(amount);
-            this.transactionCount --;
+            chargeCount();
+            return super.withdrawal(amount);
         } else {
-            balance -= amount + 1;
+            return super.withdrawal(amount + 1);
         }
     }
 
