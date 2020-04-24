@@ -65,7 +65,10 @@ public class Main {
                     }
                     break;
                 case 6:
-                    savingsAccount.execute();
+                    if (savingsAccount.execute()) {
+                       checkingAccount.charges();
+                       savingsAccount.resetCountTransition();
+                    }
                     break;
                 case 7:
                     System.out.println("Nhập tên label:");
