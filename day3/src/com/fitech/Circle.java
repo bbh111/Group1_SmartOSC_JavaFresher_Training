@@ -5,7 +5,7 @@ public class Circle extends Shape{
     }
 
     @Override
-    public void centerPoint() {
-        System.out.println("center point of circle");
+    public Point centerPoint(Point point) {
+        return point;
     }
 }

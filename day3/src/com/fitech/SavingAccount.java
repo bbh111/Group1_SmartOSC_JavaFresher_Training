@@ -2,12 +2,11 @@ package com.fitech;
 
 public class SavingAccount extends BankAccount{
     private int transactionCount = 3;
-
-    private int count = 30;
+    private int count = 10;
 
     public boolean checkEarnMonthlyInterest() {
         count--;
-        return count < 0;
+        return count <= 0;
     }
 
     public void chargeCount() {
@@ -45,6 +44,7 @@ public class SavingAccount extends BankAccount{
     public void earnMonthlyInterest() {
         double rate = 0.1;
         balance += balance*rate;
+        count = 30;
         updateTransactionCount();
     }
 }

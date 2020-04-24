@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         int choose;
         double inches;
         double miles;
         double gallons;
-        Scanner sc = new Scanner(System.in);
         do {
             System.out.println("---Menu---");
             System.out.println("0. Exit");
@@ -61,14 +61,20 @@ public class Main {
                     double x = sc.nextDouble();
                     System.out.println("Enter y: ");
                     double y = sc.nextDouble();
-                    LabeledPoint labeledPoint = new LabeledPoint(name, x, y);
+                    Point labeledPoint = new LabeledPoint(name, x, y);
                     System.out.println(labeledPoint.toString());
                     break;
                 case 6:
-                    Rectangle rectangle = new Rectangle();
-                    rectangle.centerPoint();
-                    Circle circle = new Circle();
-                    circle.centerPoint();
+                    Shape rectangle = new Rectangle();
+                    Shape circle = new Circle();
+                    System.out.println("Enter x: ");
+                    x = sc.nextDouble();
+                    System.out.println("Enter y: ");
+                    y = sc.nextDouble();
+                    System.out.println("center point of rectangle: "
+                            + rectangle.centerPoint(new Point(x, y)));
+                    System.out.println("center point of circle: "
+                            + circle.centerPoint(new Point(x, y)));
                     break;
                 default:break;
             }
