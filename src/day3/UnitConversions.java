@@ -1,6 +1,6 @@
 package day3;
 
-public class UnitConversions {
+public abstract class UnitConversions {
     private double input;
 
     public double getInput() {
@@ -10,6 +10,7 @@ public class UnitConversions {
     public void setInput(double input) {
         this.input = input;
     }
+    public abstract double execute();
 }
 
 class InchesToCentimeters extends UnitConversions {
