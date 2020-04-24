@@ -12,7 +12,7 @@ public abstract class BankAccount {
     }
 
     public boolean withdraw(double amount) {
-        if (0 < amount || amount < this.balance) {
+        if (0 < amount && amount < this.balance) {
             this.balance -= amount;
             return true;
         }
