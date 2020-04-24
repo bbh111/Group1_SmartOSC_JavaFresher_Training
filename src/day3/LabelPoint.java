@@ -7,4 +7,7 @@ public class LabelPoint extends Point {
         super(x, y);
         this.name = name;
     }
+    public void display(){
+        System.out.println("name = "+ name);
+    }
 }

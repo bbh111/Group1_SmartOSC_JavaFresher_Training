@@ -115,10 +115,10 @@ public class Controller {
     //Bài tập 6
     public void shapeClass() {
         System.out.println("1- Create Rectagle is subClass Shape: Done");
-        Rectagle rectagle = new Rectagle();
+        Shape rectagle = new Rectagle(15,20,5,2);
         rectagle.centerPoint();
         System.out.println("2- Create Circle is subClass Shape: Done");
-        Circle circle = new Circle();
+        Shape circle = new Circle();
         circle.centerPoint();
     }
 }
