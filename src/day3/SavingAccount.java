@@ -15,16 +15,9 @@ public class SavingAccount extends BankAccount {
 
     @Override
     public void deposit() {
-
         super.deposit();
         count++;
-
-        if(count > 3){
-            super.setBalance(super.getBalance()-1);
-            System.out.println("Balance after process: "+ super.getBalance());
-        }else{
-            System.out.println("You just have " + (3-count)+ " times free");
-        }
+        process(count);
 
     }
 
@@ -32,6 +25,9 @@ public class SavingAccount extends BankAccount {
     public void withdraw() {
         super.withdraw();
         count++;
+        process(count);
+    }
+    public void process(int count){
         if(count > 3){
             super.setBalance(super.getBalance()-1);
             System.out.println("Balance after process: "+ super.getBalance());
