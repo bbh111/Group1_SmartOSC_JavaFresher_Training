@@ -30,6 +30,7 @@ public abstract class BankAccount {
     public double earnMonthlyInterest() {
         double interestMonth = this.balance * this.rateForMonthly;
         this.balance += interestMonth;
+        this.countTransition = 3;
         return interestMonth;
     }
 

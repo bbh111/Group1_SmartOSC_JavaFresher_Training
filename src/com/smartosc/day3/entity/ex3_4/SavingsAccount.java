@@ -5,7 +5,6 @@ public class SavingsAccount extends BankAccount {
     public double earnMonthlyInterest() {
         if (super.earnMonthlyInterest() > 0) {
             this.charges(10);
-            this.countTransition = 3;
         }
         return 0;
     }
