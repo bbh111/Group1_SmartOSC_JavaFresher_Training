@@ -1,6 +1,7 @@
 package day3;
 
 import javax.management.ObjectInstance;
+import java.lang.reflect.Proxy;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -221,6 +222,7 @@ public class Main {
             }
         }while (true);
         return rs;
+
     }
 
 }
