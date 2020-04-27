@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Main {
     static File folder = new File("./src/com/smartosc/day4").getAbsoluteFile();
@@ -23,8 +22,7 @@ public class Main {
         FileFilter fileFilter = File::isDirectory;
         File[] files = folder.listFiles(fileFilter);
         if (null != files) {
-            for (File file : files)
-            {
+            for (File file : files) {
                 System.out.println(file.getName());
             }
         }
@@ -35,8 +33,7 @@ public class Main {
         FilenameFilter txtFileFilter = (dir, name) -> name.endsWith(".txt");
         File[] files = folder.listFiles(txtFileFilter);
         if (null != files) {
-            for (File file : files)
-            {
+            for (File file : files) {
                 System.out.println(file.getName());
             }
         }
