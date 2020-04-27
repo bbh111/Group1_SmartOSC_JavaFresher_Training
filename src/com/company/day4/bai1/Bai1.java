@@ -2,8 +2,9 @@ package com.company.day4.bai1;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.Arrays;
 
-public class FileFilterLambda {
+public class Bai1 {
 
     public static void main(String[] args) {
         // Path to folder
@@ -15,10 +16,13 @@ public class FileFilterLambda {
         FileFilter fileFilter = File::isDirectory;
 
         paths = file.listFiles(fileFilter);
+        assert paths != null;
 
-        for (File path : paths) {
+        Arrays.stream(paths).forEach(System.out::println); // Method Reference
+
+        /*for (File path : paths) {
             System.out.println(path);
-        }
+        }*/
 
     }
 }

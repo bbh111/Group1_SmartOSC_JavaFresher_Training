@@ -1,5 +1,8 @@
 package com.company.day4.bai4;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Bai4 {
     @FunctionalInterface
     interface InchesToCentimeters {
