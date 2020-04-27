@@ -29,6 +29,9 @@ public class Main {
                 case 6:
                     controller.shapeClass();
                     break;
+                default:
+                    System.out.println("Hello");
+                    break;
             }
         } while (option >= 1 && option <= 6);
 
