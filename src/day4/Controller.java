@@ -18,7 +18,6 @@ public class Controller {
                 System.out.println(file.getName());
             }
         }
-
     }
 
     public void bai2(String name2) {
@@ -56,12 +55,10 @@ public class Controller {
                     return 0;
                 }
             });
-
             for (File file : files) {
                 System.out.println(file.getName());
             }
         }
-
     }
 
     public void bai4() {
