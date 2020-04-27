@@ -1,5 +1,8 @@
 package day4;
 
+
+import day3.UnitConversions;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
@@ -101,9 +104,10 @@ public class FileValidation {
                     System.out.println("Convert Inches to Centimeters: ");
                     double inches = scanner.nextDouble();
                     scanner.nextLine();
-                    class Conversion {
-
-                    }
+                    UnitConversion convert = value -> {
+                        return 2.54 * value;
+                    };
+                    System.out.println(convert.convert(inches));
                     break;
             }
         } while (Integer.parseInt(choice) != 5);

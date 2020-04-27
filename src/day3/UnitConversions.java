@@ -13,13 +13,6 @@ public abstract class UnitConversions {
     public abstract double execute();
 }
 
-class InchesToCentimeters extends UnitConversions {
-    private double inches = 2.54;
-    public double execute() {
-        return this.inches * super.getInput();
-    }
-}
-
 class GallonsToLiters extends UnitConversions {
     private double gallon = 3.7854;
     public double execute() {
