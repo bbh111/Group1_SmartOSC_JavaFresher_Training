@@ -13,19 +13,18 @@ public class Main {
 
     public static void main(String[] args) {
 //        handlerEx1();
-//        handlerEx2();
+        handlerEx2();
 //        handlerEx3();
-        handlerEx4();
+//        handlerEx4();
     }
 
     // EX 1
     public static void handlerEx1() {
-        FileFilter fileFilter = pathname -> pathname.length() < 10 * 1024 * 1024;
+        FileFilter fileFilter = File::isDirectory;
         File[] files = folder.listFiles(fileFilter);
-        assert files != null;
-        for (File file :
-                files) {
-            if (file.isDirectory()) {
+        if (null != files) {
+            for (File file : files)
+            {
                 System.out.println(file.getName());
             }
         }
@@ -35,30 +34,35 @@ public class Main {
     public static void handlerEx2() {
         FilenameFilter txtFileFilter = (dir, name) -> name.endsWith(".txt");
         File[] files = folder.listFiles(txtFileFilter);
-        assert files != null;
-        System.out.println(Arrays.toString(files));
+        if (null != files) {
+            for (File file : files)
+            {
+                System.out.println(file.getName());
+            }
+        }
     }
 
     // 3
     public static void handlerEx3() {
         File[] files = folder.listFiles();
-        assert files != null;
-        Arrays.sort(files, (f1, f2) -> {
-            if (f1.isDirectory() && !f2.isDirectory()) {
-                return -1;
-            } else if (!f1.isDirectory() && f2.isDirectory()) {
-                return 1;
-            } else {
-                return f1.compareTo(f2);
-            }
-        });
-        for (File file :
-                files) {
-            if (!file.isHidden()) {
-                if (file.isDirectory()) {
-                    System.out.println("DIR \t" + file.getName());
+        if (null != files) {
+            Arrays.sort(files, (f1, f2) -> {
+                if (f1.isDirectory() && !f2.isDirectory()) {
+                    return -1;
+                } else if (!f1.isDirectory() && f2.isDirectory()) {
+                    return 1;
                 } else {
-                    System.out.println("FILE\t" + file.getName());
+                    return f1.compareTo(f2);
+                }
+            });
+            for (File file :
+                    files) {
+                if (!file.isHidden()) {
+                    if (file.isDirectory()) {
+                        System.out.println("DIR \t" + file.getName());
+                    } else {
+                        System.out.println("FILE\t" + file.getName());
+                    }
                 }
             }
         }
