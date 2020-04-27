@@ -21,11 +21,12 @@ public class Controller {
 
     }
 
-    public void bai2() {
+    public void bai2(String name2) {
         File dir = new File(PATH_NAME);
+
         if (dir.isDirectory()) {
             String[] subDir = dir.list((dir1, name) -> {
-                return name.endsWith(".exe");
+                return name.endsWith(name2);
             });
 
             display(subDir);
@@ -44,15 +45,25 @@ public class Controller {
             File[] files = dir.listFiles(file -> file.exists());
            // Arrays.sort(files, Comparator.comparing(File::isDirectory));
             Arrays.sort(files, (o1, o2) -> {
-                if(o1.isDirectory()){
-                    return -1;
-                }else{
-                    if(o2.isDirectory()){
+                if(o1.isDirectory() != o2.isDirectory()) {
+                    if(o1.isDirectory()) {
+                        return -1;
+                    } else {
                         return 1;
-                    }else{
-                        return 0;
                     }
                 }
+                else {
+                    return o1.compareTo(o2);
+                }
+//                if(o1.isDirectory()){
+//                    return -1;
+//                }else{
+//                    if(o2.isDirectory()){
+//                        return 1;
+//                    }else{
+//                        return 0;
+//                    }
+//                }
             });
 
             for(File file : files){

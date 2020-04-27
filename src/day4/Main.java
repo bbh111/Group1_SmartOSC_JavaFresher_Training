@@ -14,7 +14,7 @@ public class Main {
               controller.bai1();
               break;
           case 2:
-              controller.bai2();
+              controller.bai2(".exe");
               break;
           case 3:
               controller.bai3();
