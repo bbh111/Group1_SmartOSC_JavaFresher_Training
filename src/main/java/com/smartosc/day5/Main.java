@@ -26,7 +26,7 @@ public class Main {
         if (root < 2) {
             return false;
         } else {
-            for (int i = 2; i <= root; i++) {
+            for (int i = 2; i <= root / 2; i++) {
                 if (root % i == 0) {
                     return false;
                 }
