@@ -1,5 +1,4 @@
-package day3;
-
+package main.java.day3;
 import java.util.Scanner;
 
 public class Conversion extends UnitConvesion {

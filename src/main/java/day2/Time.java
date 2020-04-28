@@ -1,4 +1,4 @@
-package day2;
+package main.java.day2;
 
 public class Time {
     private int hours;

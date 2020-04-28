@@ -1,9 +1,8 @@
-package day3;
+package main.java.day2;
 
 import java.util.Scanner;
 
 public class Valid {
-
     Scanner scanner = new Scanner(System.in);
 
     public int isIntNumber(String text) {

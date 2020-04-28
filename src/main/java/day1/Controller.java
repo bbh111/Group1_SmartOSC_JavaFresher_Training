@@ -1,4 +1,4 @@
-package day1;
+package main.java.day1;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

@@ -1,5 +1,4 @@
-package day3;
-
+package main.java.day3;
 public class LabelPoint extends Point {
     private String name;
 

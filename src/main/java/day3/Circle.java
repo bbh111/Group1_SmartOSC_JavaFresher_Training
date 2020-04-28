@@ -1,5 +1,4 @@
-package day3;
-
+package main.java.day3;
 public class Circle extends Shape {
 
     int Ox;
