@@ -1,9 +1,9 @@
 package main.java.day3;
 
-import day3.Valid;
+import main.java.day3.*;
 
 public class BankAccount {
-    day3.Valid valid = new Valid();
+    Valid valid = new Valid();
     private double balance;
 
     public BankAccount(double balance) {
