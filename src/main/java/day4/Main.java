@@ -54,6 +54,12 @@ public class Main {
                 case 3:
                     System.out.println("Enter your directory");
                     String dir3 = scanner.nextLine();
+
+//                    File f = new File("./src/day1");
+//                    File f1 = new File("./src/testDemo.txt");
+//                    File f3 = new File("./src/day2");
+//                    File[] test = {f,f1,f3};
+
                     if (new File(dir3).listFiles() != null) {
                         System.out.println("All files before sort is: ");
                         fileValidation.display(new File(dir3).listFiles());
