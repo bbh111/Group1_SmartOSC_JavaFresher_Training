@@ -1,6 +1,6 @@
 package com.smartosc.day3.entity.ex6;
 
-public class Rectangle extends Shape {
+public class Rectangle implements Shape {
     private float width;
     private float height;
 
@@ -12,6 +12,6 @@ public class Rectangle extends Shape {
 
     @Override
     public void centerPoint() {
-        System.out.println(String.format("(%s, %s)", width / 2, height / 2));
+        System.out.printf("(%s, %s)%n", width / 2, height / 2);
     }
 }

@@ -3,9 +3,10 @@ package com.smartosc.day2.controller;
 import com.smartosc.day2.entity.Time;
 
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class TimeController {
-    public static TimeController instance;
+    private static final AtomicReference<TimeController> instance = new AtomicReference<>();
     public void generateViewConsole() {
         Scanner scanner = new Scanner(System.in);
         Time time;
@@ -35,9 +36,9 @@ public class TimeController {
         }
     }
     public static TimeController getController() {
-        if (instance == null) {
-            instance = new TimeController();
+        if (instance.get() == null) {
+            instance.set(new TimeController());
         }
-        return instance;
+        return instance.get();
     }
 }

@@ -3,9 +3,10 @@ package com.smartosc.day2.controller;
 import com.smartosc.utl.NumberUtil;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ArrayController {
-    public static ArrayController instance;
+    public static final AtomicReference<ArrayController> instance = new AtomicReference<>();
     static Scanner scanner = new Scanner(System.in);
     public void generateViewConsole() {
         while (true) {
@@ -123,13 +124,13 @@ public class ArrayController {
 
     // Ex 3
     public int[] swapsIndexNegative(int[] ints) {
-        int j = 0, temp;
+        int j = 0;
         for (int i = 0; i < ints.length; i++) {
             if (ints[i] > 0) {
                 // nếu index == nhau thì bỏ qua.
                 if (i != j) {
                     // Gán giá trị cho temp = giá trị của ints[i] vị trí thứ i nếu nó lớn 0
-                    temp = ints[i];
+                    int temp = ints[i];
                     // Hoản đổi vị trí của số dương vừa tìm đc = ints[j], j ban đầu = 0 => lấy giá giá trị đầu tiên vào thay cho nó.
                     ints[i] = ints[j];
                     // Gán giá trị ints[j], j ban đầu = 0 => biến temp được lấy chính là số dương được gán vào vị trí đầu.
@@ -168,7 +169,7 @@ public class ArrayController {
         List<String> list = new ArrayList<>();
         for (String timezone : TimeZone.getAvailableIDs()) {
             if (timezone.startsWith(prefix)) {
-                timezone.replace(prefix, "");
+                timezone = timezone.replace(prefix, "");
                 list.add(timezone);
             }
         }
@@ -179,9 +180,9 @@ public class ArrayController {
 
 
     public static ArrayController getController() {
-        if (instance == null) {
-            instance = new ArrayController();
+        if (instance.get() == null) {
+            instance.set(new ArrayController());
         }
-        return instance;
+        return instance.get();
     }
 }

@@ -10,7 +10,6 @@ public class NumberUtil {
     }
 
     public static int randomInt(int bound) {
-        Random random = new Random();
-        return random.nextInt(bound);
+        return new Random().nextInt(bound);
     }
 }

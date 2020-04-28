@@ -1,6 +1,6 @@
 package com.smartosc.day3.entity.ex6;
 
-public class Circle extends Shape {
+public class Circle implements Shape {
     private String centerPoint;
     public Circle(float x, float y) {
         super();

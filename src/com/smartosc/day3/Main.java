@@ -17,7 +17,7 @@ public class Main {
         UnitConversion conversion;
         Shape shape;
         BankAccount bankAccount;
-        while (true) {
+        do {
             System.out.println("===== BÀI TẬP DAY 3 =====");
             System.out.println("1. Inch sang cm. (Ex1,2)");
             System.out.println("2. Mile sang km. (Ex1,2)");
@@ -47,7 +47,7 @@ public class Main {
                 case 4:
                     bankAccount = new CheckingAccount();
                     System.out.println("Nhập số tiền bạn muốn rút: ");
-                    if (bankAccount.withdraw(scanner.nextDouble())){
+                    if (bankAccount.withdraw(scanner.nextDouble())) {
                         System.out.println("Rút tiền thành công!");
                         System.out.println(String.format("Số dư hiện tại còn: %s", bankAccount.getBalance()));
                     } else {
@@ -57,7 +57,7 @@ public class Main {
                 case 5:
                     bankAccount = new CheckingAccount();
                     System.out.println("Nhập số tiền bạn muốn gửi: ");
-                    if (bankAccount.deposit(scanner.nextDouble())){
+                    if (bankAccount.deposit(scanner.nextDouble())) {
                         System.out.println("Gửi tiền thành công!");
                         System.out.println(String.format("Số dư hiện tại còn: %s", bankAccount.getBalance()));
                     } else {
@@ -68,7 +68,7 @@ public class Main {
                     bankAccount = new SavingsAccount();
                     System.out.println(String.format("Số dư trong tài khoản hiện tại: %s", bankAccount.getBalance()));
                     double result = bankAccount.earnMonthlyInterest();
-                    if(result > 0) {
+                    if (result > 0) {
                         System.out.println("Thêm tiền lãi thành công!");
                         System.out.println(String.format("Số tiền lãi tháng là: %s$", result));
                         System.out.println(String.format("Số dư hiện tại là: %s$", bankAccount.getBalance()));
@@ -102,7 +102,7 @@ public class Main {
             if (choice == 0) {
                 System.exit(0);
             }
-        }
+        } while (true);
     }
 
     public static void enterValue(UnitConversion unitConversion) {

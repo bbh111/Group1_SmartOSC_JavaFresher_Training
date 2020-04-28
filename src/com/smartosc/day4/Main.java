@@ -7,14 +7,13 @@ import java.io.FileFilter;
 import java.io.FilenameFilter;
 import java.util.Arrays;
 
+import static java.lang.System.out;
+
 public class Main {
     static File folder = new File("./src/com/smartosc/day4").getAbsoluteFile();
 
     public static void main(String[] args) {
-//        handlerEx1();
-        handlerEx2();
-//        handlerEx3();
-//        handlerEx4();
+        handlerEx3();
     }
 
     // EX 1
@@ -23,7 +22,7 @@ public class Main {
         File[] files = folder.listFiles(fileFilter);
         if (null != files) {
             for (File file : files) {
-                System.out.println(file.getName());
+                out.println(file.getName());
             }
         }
     }
@@ -34,7 +33,7 @@ public class Main {
         File[] files = folder.listFiles(txtFileFilter);
         if (null != files) {
             for (File file : files) {
-                System.out.println(file.getName());
+                out.println(file.getName());
             }
         }
     }
@@ -42,31 +41,39 @@ public class Main {
     // 3
     public static void handlerEx3() {
         File[] files = folder.listFiles();
-        if (null != files) {
+        if (files != null) {
             Arrays.sort(files, (f1, f2) -> {
                 if (f1.isDirectory() && !f2.isDirectory()) {
-                    return -1;
+                    return -1; // desc
                 } else if (!f1.isDirectory() && f2.isDirectory()) {
-                    return 1;
+                    return 1; // asc
                 } else {
                     return f1.compareTo(f2);
                 }
             });
-            for (File file :
-                    files) {
-                if (!file.isHidden()) {
-                    if (file.isDirectory()) {
-                        System.out.println("DIR \t" + file.getName());
-                    } else {
-                        System.out.println("FILE\t" + file.getName());
-                    }
+            long startTime = System.nanoTime();
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    out.println("DIR \t" + file.getName());
+                } else {
+                    out.println("FILE\t" + file.getName());
                 }
             }
+            long endTime = System.nanoTime();
+
+            long duration = (endTime - startTime);
+            out.println(String.format("for: %s", duration));
+
+            startTime = System.nanoTime();
+            Arrays.stream(files).forEach(out::println);
+            endTime = System.nanoTime();
+            duration = (endTime - startTime);
+            out.println(String.format("stream: %s", duration));
         }
     }
 
     public static void handlerEx4() {
         MilesToKilometers milesToKilometers = new MilesToKilometers();
-        System.out.println(milesToKilometers.conversion(10));
+        out.println(milesToKilometers.conversion(10));
     }
 }

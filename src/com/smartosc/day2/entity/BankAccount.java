@@ -50,20 +50,10 @@ public class BankAccount {
             return number;
         }
 
-        public static Type getStatusByValue(int value) {
-            for (Type status : Type.values()) {
-                if (status.number == value) return status;
-            }
-            throw new IllegalArgumentException("Type not found!");
-        }
     }
 
     public double getBalance() {
         return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 
 }

@@ -11,7 +11,7 @@ public class MainDay2 {
         BankController bankController = BankController.getController();
         TimeController timeController = TimeController.getController();
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        do {
             System.out.println("========== BÀI TẬP ==========");
             System.out.println("1. Arrays (1->7)");
             System.out.println("2. Bank (8)");
@@ -28,6 +28,7 @@ public class MainDay2 {
                     break;
                 case 3:
                     timeController.generateViewConsole();
+                    break;
                 case 4:
                     System.out.println("Vui lòng nhập tên đầy đủ: ");
                     new Person(scanner.nextLine());
@@ -35,9 +36,10 @@ public class MainDay2 {
                 case 0:
                     System.out.println("Tạm biệt!");
                     System.exit(0);
+                    break;
                 default:
                     System.out.println("Lựa chọn sai vui lòng chọn lại!");
             }
-        }
+        } while (true);
     }
 }

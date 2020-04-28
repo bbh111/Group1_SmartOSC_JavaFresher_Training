@@ -1,10 +1,11 @@
 package com.smartosc.day2.controller;
 import com.smartosc.day2.entity.BankAccount;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class BankController {
     private static BankAccount bankAccount = new BankAccount();
-    public static BankController instance;
+    public static final AtomicReference<BankController> instance = new AtomicReference<>();
     public void generateViewConsole() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -50,9 +51,9 @@ public class BankController {
         }
     }
     public static BankController getController() {
-        if (instance == null) {
-            instance = new BankController();
+        if (instance.get() == null) {
+            instance.set(new BankController());
         }
-        return instance;
+        return instance.get();
     }
 }

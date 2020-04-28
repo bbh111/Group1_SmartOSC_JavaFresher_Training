@@ -7,31 +7,33 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
+import static java.lang.System.*;
+
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(in);
     static long result = 1;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         generateViewConsole();
     }
 
-    public static void generateViewConsole() {
+    public static void generateViewConsole() throws InterruptedException {
         boolean isNumberResult;
         NumberUtil numberUtil = new NumberUtil();
         ErrorUtil errorUtil = new ErrorUtil();
-        while (true) {
-            System.out.println("1. Get the first character of String");
-            System.out.println("2. Get the last character of String");
-            System.out.println("3. Use BigDecimal to compute huge number");
-            System.out.println("4. Countdown number to 0");
-            System.out.println("5. Convert character in String into their ASCII");
-            System.out.println("6. Recursive Function: Function 5");
-            System.out.println("7. Get n characters of the First Left side of String");
-            System.out.println("8. Get n characters of the First Right side of String");
-            System.out.println("9. Drop n characters of the First Left side of String");
-            System.out.println("10. Drop n characters of the First Right side of String");
-            System.out.println("11. Exit");
-            System.out.println("-------------------------*--------------------------\n");
-            System.out.println("Enter your choice: ");
+        do {
+            out.println("1. Get the first character of String");
+            out.println("2. Get the last character of String");
+            out.println("3. Use BigDecimal to compute huge number");
+            out.println("4. Countdown number to 0");
+            out.println("5. Convert character in String into their ASCII");
+            out.println("6. Recursive Function: Function 5");
+            out.println("7. Get n characters of the First Left side of String");
+            out.println("8. Get n characters of the First Right side of String");
+            out.println("9. Drop n characters of the First Left side of String");
+            out.println("10. Drop n characters of the First Right side of String");
+            out.println("11. Exit");
+            out.println("-------------------------*--------------------------\n");
+            out.println("Enter your choice: ");
             String choice = scanner.nextLine();
             isNumberResult = numberUtil.checkIsNumber(choice);
 
@@ -46,89 +48,79 @@ public class Main {
             switch (Integer.parseInt(choice)) {
 
                 case 1:
-                    System.out.println("Please enter String:");
-                    System.out.println(getFirstCharacter(scanner.nextLine()));
-                    System.out.println("Press Enter to back");
+                    out.println("Please enter String:");
+                    out.println(getFirstCharacter(scanner.nextLine()));
                     scanner.nextLine();
                     break;
                 case 2:
-                    System.out.println("Please enter String:");
-                    System.out.println(getLastCharacter(scanner.nextLine()));
-                    System.out.println("Press Enter to back");
+                    out.println("Please enter String:");
+                    out.println(getLastCharacter(scanner.nextLine()));
                     scanner.nextLine();
                     break;
                 case 3:
-                    System.out.println("Please enter number base:");
+                    out.println("Please enter number base:");
                     BigInteger base = scanner.nextBigInteger();
-                    System.out.println("Please enter number exponent:");
+                    out.println("Please enter number exponent:");
                     int exponent = scanner.nextInt();
-                    System.out.println(getBigInt(base, exponent));
-                    System.out.println("Press Enter to back");
+                    out.println(getBigInt(base, exponent));
                     scanner.nextLine();
                     break;
                 case 4:
-                    System.out.println("Please enter number:");
+                    out.println("Please enter number:");
                     countDown(scanner.nextInt());
-                    System.out.println("Press Enter to back");
                     scanner.nextLine();
                     break;
                 case 5:
-                    System.out.println("Please enter String:");
-                    System.out.println(convertStringToUniCode(scanner.nextLine()));
-                    System.out.println("Press Enter to back");
+                    out.println("Please enter String:");
+                    out.println(convertStringToUniCode(scanner.nextLine()));
                     scanner.nextLine();
                     break;
                 case 6:
-                    System.out.println("Please enter String:");
-                    System.out.println(convertToASCII(scanner.nextLine()));
-                    System.out.println("Press Enter to back");
+                    out.println("Please enter String:");
+                    out.println(convertToASCII(scanner.nextLine()));
                     scanner.nextLine();
                     break;
                 case 7:
-                    System.out.println("Please enter string:");
+                    out.println("Please enter string:");
                     s = scanner.nextLine();
-                    System.out.println("Please enter number character:");
+                    out.println("Please enter number character:");
                     number = scanner.nextInt();
-                    System.out.println(takeLeft(number, s));
-                    System.out.println("Press Enter to back");
+                    out.println(takeLeft(number, s));
                     scanner.nextLine();
                     break;
                 case 8:
-                    System.out.println("Please enter string:");
+                    out.println("Please enter string:");
                     s = scanner.nextLine();
-                    System.out.println("Please enter number character:");
+                    out.println("Please enter number character:");
                     number = scanner.nextInt();
-                    System.out.println(takeRight(number, s));
-                    System.out.println("Press Enter to back");
+                    out.println(takeRight(number, s));
                     scanner.nextLine();
                     break;
                 case 9:
-                    System.out.println("Please enter string:");
+                    out.println("Please enter string:");
                     s = scanner.nextLine();
-                    System.out.println("Please enter number character:");
+                    out.println("Please enter number character:");
                     number = scanner.nextInt();
-                    System.out.println(dropLeft(number, s));
-                    System.out.println("Press Enter to back");
+                    out.println(dropLeft(number, s));
                     scanner.nextLine();
                     break;
                 case 10:
-                    System.out.println("Please enter string:");
+                    out.println("Please enter string:");
                     s = scanner.nextLine();
-                    System.out.println("Please enter number character:");
+                    out.println("Please enter number character:");
                     number = scanner.nextInt();
-                    System.out.println(dropRight(number, s));
-                    System.out.println("Press Enter to back");
+                    out.println(dropRight(number, s));
                     scanner.nextLine();
                     break;
                 case 11:
-                    System.out.println("Good bye!");
-                    System.exit(0);
+                    out.println("Good bye!");
+                    exit(0);
                     break;
                 default:
                     errorUtil.alertErrorChoice("(1 -> 11)");
                     break;
             }
-        }
+        } while (true);
     }
 
     // Bài 1
@@ -146,14 +138,10 @@ public class Main {
     }
 
     // Bài 3
-    public static void countDown(int number) {
+    public static void countDown(int number) throws InterruptedException {
         for (int i = number; i >= 0; i--) {
-            System.out.println(number);
-            try {
-                Thread.sleep(1 * 1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            out.println(number);
+            Thread.sleep(1000);
         }
     }
 
