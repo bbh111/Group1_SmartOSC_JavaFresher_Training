@@ -9,15 +9,21 @@ public class Ex4 {
     public static void cat(File file) {
 
         String line = null;
-        try( RandomAccessFile input = new RandomAccessFile(file, "r");) {
+        try (RandomAccessFile input = new RandomAccessFile(file, "r");) {
             while ((line = input.readLine()) != null) {
                 System.out.println(line);
             }
             return;
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
+
+    public static void main(String[] args) {
+        File file = new File("..\\untitled\\src\\main\\java\\day5\\ex4\\temp1.txt");
+    }
+
 }
