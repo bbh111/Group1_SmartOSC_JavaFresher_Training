@@ -12,9 +12,12 @@ public class Excercise4 {
             while ((line = input.readLine()) != null) {
                 System.out.println(line);
             }
-            return;
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        cat(new File("../src/main/day5/test.txt"));
     }
 }
