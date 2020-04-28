@@ -24,6 +24,7 @@ public class Ex4 {
 
     public static void main(String[] args) {
         File file = new File("..\\untitled\\src\\main\\java\\day5\\ex4\\temp1.txt");
+        cat(file);
     }
 
 }
