@@ -2,54 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc89efc7-2bca-4201-8a4c-edfb93b1e4ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaPractise.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaPractise.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise.txt" beforeDir="false" afterPath="$PROJECT_DIR$/exercise.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai1/bai1$Conversions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai1/bai1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai2/UnitConversion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai2/bai2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai3_4/BankAccount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai3_4/CheckingAccount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai3_4/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai3_4/SavingsAccount.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai5/LabeledPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai5/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai5/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai6/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai6/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai6/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day3/bai6/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/LambdaDemo$Calc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/LambdaDemo$Hello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/LambdaDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai1/Bai1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai2/Bai2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai3/Bai3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai4/Bai4$GallonsToLiters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai4/Bai4$InchesToCentimeters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai4/Bai4$MilesToKilometers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/com/company/day4/bai4/Bai4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai1/bai1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai2/UnitConversion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai2/bai2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai3_4/BankAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai3_4/CheckingAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai3_4/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai3_4/SavingsAccount.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai5/LabeledPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai5/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai5/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai6/Circle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai6/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai6/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day3/bai6/Shape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day4/LambdaDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day4/bai1/Bai1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day4/bai2/Bai2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day4/bai3/Bai3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/day4/bai4/Bai4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaPractise/META-INF/JavaPractise.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/JavaPractise.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai1/bai1$Conversions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai1/bai1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai2/UnitConversion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai2/bai2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai3_4/BankAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai3_4/CheckingAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai3_4/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai3_4/SavingsAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai5/LabeledPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai5/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai5/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai6/Circle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai6/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai6/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day3/bai6/Shape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/LambdaDemo$Calc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/LambdaDemo$Hello.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/LambdaDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai1/Bai1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai2/Bai2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai3/Bai3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai4/Bai4$GallonsToLiters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai4/Bai4$InchesToCentimeters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai4/Bai4$MilesToKilometers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day4/bai4/Bai4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day5/bai1/Bai1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day5/bai2/Bai2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day5/bai3/Bai3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/day5/bai4/Bai4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +168,7 @@
       <workItem from="1587960499574" duration="14974000" />
       <workItem from="1587999272151" duration="167000" />
       <workItem from="1588046048535" duration="1779000" />
-      <workItem from="1588055463801" duration="8137000" />
+      <workItem from="1588055463801" duration="8468000" />
     </task>
     <servers />
   </component>
