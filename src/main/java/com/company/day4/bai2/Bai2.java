@@ -27,5 +27,6 @@ public class Bai2 {
         for (File path : paths) {
             System.out.println(path.getName());
         }
+
     }
 }
