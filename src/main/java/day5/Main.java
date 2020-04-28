@@ -1,5 +1,6 @@
 package day5;
 
+import java.io.File;
 import java.util.*;
 
 public class Main {
@@ -107,11 +108,11 @@ public class Main {
                         System.out.println("Maximum Value is : " + rs);
                     }
                     break;
+                case 4:
+                    Excercise4.cat(new File("./src/main/java/day5/test.txt"));
+                    break;
             }
-
-
         } while (Integer.parseInt(choice) != 5);
-
     }
 
     static void doMain() {
