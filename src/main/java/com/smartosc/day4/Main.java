@@ -10,7 +10,7 @@ import java.util.Arrays;
 import static java.lang.System.out;
 
 public class Main {
-    static File folder = new File("./src/com/smartosc/day4").getAbsoluteFile();
+    static File folder = new File("./src/main/java/com/smartosc/day4").getAbsoluteFile();
 
     public static void main(String[] args) {
         handlerEx3();
@@ -65,7 +65,7 @@ public class Main {
             out.println(String.format("for: %s", duration));
 
             startTime = System.nanoTime();
-            Arrays.stream(files).forEach(out::println);
+            Arrays.stream(files).parallel().forEach(out::println);
             endTime = System.nanoTime();
             duration = (endTime - startTime);
             out.println(String.format("stream: %s", duration));
