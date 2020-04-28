@@ -20,6 +20,7 @@ public class Ex2<T> {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
         arr = arr1;
+
     }
 
     public void exchangePos() {
