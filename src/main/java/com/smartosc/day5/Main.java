@@ -35,6 +35,11 @@ public class Main {
         return true;
     }
 
+    private static <T extends Integer> boolean checkOdd(T k) {
+        int root = k;
+        return root % 2 != 0;
+    }
+
     public static void handlerEx1() {
         Integer[] ints = {1, 2, 3, 4, 5, 6, -1, -2, -3, -4};
         int countOdd = 0;
@@ -42,7 +47,8 @@ public class Main {
         for (int i : ints) {
             if (checkPrime(i)) {
                 countPrime++;
-            } else {
+            }
+            if (checkOdd(i)) {
                 countOdd++;
             }
         }
