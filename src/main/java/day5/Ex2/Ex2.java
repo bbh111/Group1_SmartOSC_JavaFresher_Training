@@ -1,4 +1,4 @@
-package main.java.day5.Ex2;
+package day5.Ex2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

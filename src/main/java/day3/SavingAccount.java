@@ -1,4 +1,4 @@
-package main.java.day3;
+package day3;
 public class SavingAccount extends BankAccount {
     int count = 0;
 

@@ -1,6 +1,6 @@
-package main.java.day3;
+package day3;
 
-import main.java.day3.*;
+import day3.*;
 
 public class BankAccount {
     Valid valid = new Valid();

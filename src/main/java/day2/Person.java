@@ -1,4 +1,4 @@
-package main.java.day2;
+package day2;
 
 public class Person {
     private String firstName;

@@ -1,4 +1,4 @@
-package main.java.day5.ex3;
+package day5.ex3;
 
 import java.util.Arrays;
 import java.util.Comparator;

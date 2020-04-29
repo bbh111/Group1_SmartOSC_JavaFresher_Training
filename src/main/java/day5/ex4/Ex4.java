@@ -1,4 +1,4 @@
-package main.java.day5.ex4;
+package day5.ex4;
 
 import java.io.File;
 import java.io.FileNotFoundException;

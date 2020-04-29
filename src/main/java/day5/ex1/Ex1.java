@@ -1,4 +1,4 @@
-package main.java.day5.ex1;
+package day5.ex1;
 
 import java.util.List;
 

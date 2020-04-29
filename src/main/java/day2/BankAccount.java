@@ -1,4 +1,4 @@
-package main.java.day2;
+package day2;
 
 public class BankAccount {
     Valid valid = new Valid();
