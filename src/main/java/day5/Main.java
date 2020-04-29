@@ -74,7 +74,7 @@ public class Main {
                     System.out.println("Origin Array: ");
                     display(lst);
                     Exercise2 ex2 = new Exercise2();
-                    ex2.exchangeValue(lst, begin, end);
+                    ex2.exchangeValue(Arrays.asList(lst), begin, end);
                     System.out.println();
                     System.out.println("After Exchange: ");
                     display(lst);
