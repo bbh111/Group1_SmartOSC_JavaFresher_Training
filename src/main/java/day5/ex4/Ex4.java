@@ -18,7 +18,7 @@ public class Ex4 {
             System.out.println(e.getMessage());
 
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println( e.getMessage());
         }
     }
 
