@@ -3,7 +3,7 @@ package day5;
 import java.util.List;
 
 public class Exercise3 {
-    public <T extends Number> T getMaxValueElement(List<T> input, int begin, int end) {
+    public <T extends Comparable> T getMaxValueElement(List<T> input, int begin, int end) {
         if (begin > input.size()  || begin < 0 || end < 0) return null;
         int tmp;
         if (begin > end) {
@@ -15,7 +15,7 @@ public class Exercise3 {
         }
         T maxValue = input.get(begin);
         for (int i = begin; i <= end; i++) {
-            if (input.get(i).doubleValue() >= maxValue.doubleValue()) {
+            if (input.get(i).compareTo(maxValue) >=0) {
                 maxValue = input.get(i);
             }
         }
