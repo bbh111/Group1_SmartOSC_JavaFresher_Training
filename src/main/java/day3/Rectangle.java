@@ -1,7 +1,5 @@
 package day3;
 
-import java.util.HashMap;
-
 public class Rectangle extends Shape {
     private Point pointA;
     private int width;

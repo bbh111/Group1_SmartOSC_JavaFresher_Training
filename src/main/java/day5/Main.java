@@ -1,12 +1,21 @@
 package day5;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import sun.nio.ch.ThreadPool;
+
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
 
+    private static final Logger logger
+            = LoggerFactory.getLogger(Main.class);
     public static void main(String[] args) {
+        logger.info("Hello wolrd");
         String choice = "-1";
         int choose = -1;
         do {

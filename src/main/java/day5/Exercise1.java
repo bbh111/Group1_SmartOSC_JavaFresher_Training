@@ -27,7 +27,8 @@ public  class Exercise1 {
         rs.put("oddNumber",lstOdd);
         rs.put("primeNumber",lstPrime);
         result.putAll(count);
-        result.putAll(rs);
+        Map map = new HashMap();
+        map.put("a","b");
         return result;
     }
 
