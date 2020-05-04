@@ -20,7 +20,11 @@ public class CountDivisor {
                 finalRs = rs;
             }
             start = end + 1;
-            end += MAX / numberOfThread;
+            if((i == numberOfThread -1)&&MAX%numberOfThread!=0){
+                end = MAX;
+            }else{
+                end += MAX / numberOfThread;
+            }
             while (totalThread[i].isAlive()){
                 totalThread[i].join();
             }
