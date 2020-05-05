@@ -1,21 +1,17 @@
-1. Write a generic method to count the number of elements in a collection that have odd
-integers, prime numbers
-2. Write a generic method to exchange the positions of two different elements in an array
-3. Write a generic method to find the maximal element in the range [begin, end) of a list.
-4. Modify the following cat method so that it will compile:
-public static void cat(File file) {
-    RandomAccessFile input = null;
-    String line = null;
+1> Implement three classes: Storage, Counter, and Printer. The Storage class should store an integer.
+The Counter class should create a thread that starts counting from 0 (0, 1, 2, 3 ...) and stores
+each value in the Storage class. The Printer class should create a thread that keeps reading
+the value in the Storage class and printing it.
+ư
+Write a program that creates an instance of the Storage class and sets up a C2      ounter and a Printer
+object to operate on it.
 
-    try {
-        input = new RandomAccessFile(file, "r");
-        while ((line = input.readLine()) != null) {
-            System.out.println(line);
-        }
-        return;
-    } finally {
-        if (input != null) {
-            input.close();
-        }
-    }
-}
+2> Modify the program from the previous exercise to ensure that each number is printed exactly once,
+by adding suitable synchronization.
+
+3> Which integer between 1 and 100000 has the largest number of divisors, and how many divisors
+does it have? By using threads, your program will take less time to do the computation when
+it is run on a multiprocessor computer. At the end of the program, output the elapsed time,
+the integer that has the largest number of divisors, and the number of divisors that it has.
+For this exercise, you should simply divide up the problem into parts and create one thread to do
+each part.
