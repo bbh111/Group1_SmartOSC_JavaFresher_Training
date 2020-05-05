@@ -12,15 +12,15 @@ public class FindTheMaximal
         {
             throw new  ExceptionBound("Nhập sai");
         }
-        int max = list.get(begin).intValue();
+        double max = list.get(begin).doubleValue();
         for (int i = begin; i < end; i++) // 1,2,3,9,5
         {
-            if (list.get(i).intValue() > list.get(i + 1).intValue())
+            if (list.get(i).doubleValue() > list.get(i + 1).doubleValue())
             {
-                max = list.get(i).intValue();
+                max = list.get(i).doubleValue();
             } else
             {
-                max = list.get(i + 1).intValue();
+                max = list.get(i + 1).doubleValue();
             }
         }
         System.out.println(max);
@@ -35,7 +35,7 @@ public class FindTheMaximal
         list.add(5);
         try
         {
-            findMaximal(list , 1 ,8);
+            findMaximal(list , 1 ,4);
         } catch (ExceptionBound exceptionBound)
         {
             System.out.println(exceptionBound.getMessage());

@@ -9,6 +9,5 @@ public class Main {
         Shape circle;
         circle = new Circle(10);
         circle.centerPoint();
-
     }
 }

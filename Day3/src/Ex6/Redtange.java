@@ -2,8 +2,7 @@ package Ex6;
 
 public class Redtange extends Shape
 {
-    private double x;
-    private double y;
+    private double x , y;
 
     public Redtange(double x, double y) {
         this.x = x;

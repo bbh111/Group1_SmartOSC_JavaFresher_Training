@@ -96,6 +96,5 @@ public class SavingsAccount extends BankAccount
         System.out.println(sa.depositMoney(5));
         System.out.println(sa.depositMoney(5));
         System.out.println(sa.depositMoney(5));
-
     }
 }

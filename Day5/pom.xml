@@ -7,6 +7,7 @@
     <groupId>com.fintech</groupId>
     <artifactId>FresherJava</artifactId>
     <version>1.0</version>
+
     <build>
         <plugins>
             <plugin>
@@ -19,6 +20,21 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>1.2.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.30</version>
+        <scope>runtime</scope>
+    </dependency>
+
+
 
 
 </project>

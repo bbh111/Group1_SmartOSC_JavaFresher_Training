@@ -1,0 +1,10 @@
+
+Z	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe
+[	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe
+0
+java:S1220""Move this file to a named package.
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(ÛÛ¯ø
+f	java:S128u"LEnd this switch case with an unconditional break, return or throw statement.(òï±êÿÿÿÿÿ
+f	java:S128P"LEnd this switch case with an unconditional break, return or throw statement.(˜Çúÿÿÿÿ
+7	java:S131_""Add a default case to this switch.(¹®ÔÔ

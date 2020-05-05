@@ -1,0 +1,14 @@
+
+
+java:S1192"kDefine a constant instead of duplicating this literal "NhÃ¢Ì£p sÃ´Ì phÃ¢Ì€n tÆ°Ì‰ cuÌ‰a maÌ‰ng: " 3 times.(Æš‰—
+m	java:S127B"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ì‚ˆÌ
+0
+java:S1220""Move this file to a named package.
+L
+java:S1854"6Remove this useless assignment to local variable "fs".(ÓûÀÄ
+9
+java:S2119,"Save and re-use this "Random".(®ø»›şÿÿÿÿ
+8
+java:S1659P""Declare "temp" on a separate line.(Êµëş
+=
+java:S1481"'Remove this unused "fs" local variable.(ÓûÀÄ
