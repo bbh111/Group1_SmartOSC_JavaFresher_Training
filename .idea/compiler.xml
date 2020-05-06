@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JAVA_TaiNK_day1_simple" target="8" />
+      <module name="JAVA_TaiNK_day1_simple" target="6" />
     </bytecodeTargetLevel>
   </component>
 </project>
