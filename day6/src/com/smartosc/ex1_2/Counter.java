@@ -1,22 +1,25 @@
 package com.smartosc.ex1_2;
 
-public class Counter implements Runnable {
-    Storage storage;
+import java.util.concurrent.BlockingQueue;
 
-    public Counter(Storage storage) {
-        this.storage = storage;
-        new Thread(this, "CounterThread").start();
+public class Counter implements Runnable {
+    private final BlockingQueue<Storage> queue;
+    public Counter(BlockingQueue<Storage> blockingQueue) {
+        this.queue= blockingQueue;
     }
 
     @Override
     public void run() {
+        try {
+            process();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void process() throws InterruptedException {
         for (int i = 0; i < 10; i++) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            this.storage.setValue(i);
+            queue.put(new Storage(i));
         }
     }
 }

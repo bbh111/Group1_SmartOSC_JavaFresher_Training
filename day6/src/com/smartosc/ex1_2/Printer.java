@@ -1,22 +1,26 @@
 package com.smartosc.ex1_2;
 
-public class Printer implements Runnable {
-    Storage storage;
+import java.util.concurrent.BlockingQueue;
 
-    public Printer(Storage storage) {
-        this.storage = storage;
-        new Thread(this, "PrinterThread").start();
+public class Printer implements Runnable {
+    private final BlockingQueue<Storage> queue;
+    public Printer(BlockingQueue<Storage> queue) {
+        this.queue = queue;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(String.format("%s - %d", Thread.currentThread().getName(), this.storage.getValue()));
+        try {
+            process();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+    }
+    private void process() throws InterruptedException {
+        while(true) {
+            Thread.sleep(1000);
+            System.out.println(queue.take().getValue());
         }
     }
 }

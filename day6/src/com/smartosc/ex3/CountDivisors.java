@@ -2,22 +2,16 @@ package com.smartosc.ex3;
 
 public class CountDivisors {
     private static final int MAX = 100000;
-
     /**
      * Biến volatile trong Java có tác dụng thông báo sự thay đổi giá trị của biến tới các
      * thread khác nhau nếu biến này đang được sử dụng trong nhiều thread.
      */
     private static volatile int maxDivisorCount = 0;
 
+    /**
+     * Số nguyên có nhiều ước chung nhất. Cường nhé!
+     */
     private static volatile int intWithMaxDivisorCount;
-
-    private static synchronized void report(int maxCountFromThread,
-                                            int intWithMaxFromThread) {
-        if (maxCountFromThread > maxDivisorCount) {
-            maxDivisorCount = maxCountFromThread;
-            intWithMaxDivisorCount = intWithMaxFromThread;
-        }
-    }
 
     public static class CountDivisorsThread extends Thread {
         int min, max;
@@ -27,6 +21,14 @@ public class CountDivisors {
             this.max = max;
         }
 
+        private static synchronized void report(int maxCountFromThread, int intWithMaxFromThread) {
+            if (maxCountFromThread > maxDivisorCount) {
+                maxDivisorCount = maxCountFromThread;
+                intWithMaxDivisorCount = intWithMaxFromThread;
+            }
+        }
+
+        @Override
         public void run() {
             int maxDivisors = 0;
             int whichInt = 0;
@@ -58,8 +60,9 @@ public class CountDivisors {
             end = start + integersPerThread - 1;
         }
         maxDivisorCount = 0;
-        for (int i = 0; i < numberOfThreads; i++)
+        for (int i = 0; i < numberOfThreads; i++) {
             worker[i].start();
+        }
         for (int i = 0; i < numberOfThreads; i++) {
             while (worker[i].isAlive()) {
                 try {
@@ -72,7 +75,7 @@ public class CountDivisors {
         long elapsedTime = System.currentTimeMillis() - startTime;
         System.out.println("\nSố lượng ước số lớn nhất " +
                 "cho các số từ 1 đến " + MAX + " là: " + maxDivisorCount);
-        System.out.println("Một số nguyên có nhiều ước là: " +
+        System.out.println("Một số nguyên có nhiều ước chung là: " +
                 intWithMaxDivisorCount);
         System.out.println("Tổng thời gian:  " +
                 (elapsedTime / 1000.0) + " giây.\n");
