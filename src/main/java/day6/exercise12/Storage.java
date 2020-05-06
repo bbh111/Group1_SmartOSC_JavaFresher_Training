@@ -8,6 +8,15 @@ public class Storage {
     }
 
     private List<Integer> list;
+    private Integer num;
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
     public List<Integer> getList() {
         return list;

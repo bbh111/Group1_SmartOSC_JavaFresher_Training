@@ -1,11 +1,14 @@
 package day6.exercise3;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.Callable;
 
-public class FindThread extends Thread implements Callable {
+public class FindThread  implements Callable<Result> {
     int start;
     int end;
-
+    private static Logger logger = LoggerFactory.getLogger(CountDivisor.class);
     public FindThread(int start, int end) {
         this.start = start;
         this.end = end;
@@ -22,17 +25,12 @@ public class FindThread extends Thread implements Callable {
                     count++;
                 }
             }
-            if(count>maxCount){
+            if(count>=maxCount){
                 maxCount = count;
                 maxDivisors = i;
             }
         }
+        logger.info(maxDivisors + ":"+maxCount);
         return new Result(maxDivisors,maxCount);
-    }
-
-
-    @Override
-    public void run() {
-
     }
 }

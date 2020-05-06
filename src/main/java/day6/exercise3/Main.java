@@ -6,7 +6,7 @@ public class Main {
         long end = 0;
         CountDivisor countDivisor = new CountDivisor();
         try {
-            Result rs = countDivisor.findOutLagestDevisor(1);
+            Result rs = countDivisor.findOutLagestDevisor(10000);
             System.out.println(rs.getMaxDivisorsNumber()+" with "+rs.getMaxCount()+" divisors");
             end = System.currentTimeMillis();
         } catch (Exception e) {
