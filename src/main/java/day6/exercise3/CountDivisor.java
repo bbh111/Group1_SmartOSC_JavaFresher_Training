@@ -5,7 +5,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class CountDivisor {
     private int start;
@@ -21,6 +24,7 @@ public class CountDivisor {
         List<Future<Result>> list = new ArrayList<>();
         ExecutorService service = Executors.newFixedThreadPool(numberOfThread);
         Future<Result> future;
+
         start = 1;
         end = MAX / numberOfThread;
         for (int i = 0; i < numberOfThread; i++) {
@@ -41,9 +45,7 @@ public class CountDivisor {
                     finalRs.setMaxCount(futures.get().getMaxCount());
                     finalRs.setMaxDivisorsNumber(futures.get().getMaxDivisorsNumber());
                 }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
         });
