@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day8</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package day8;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Optional;
+
+<span class="fc" id="L8">public class Main {</span>
+<span class="fc" id="L9">    public static Logger logger = LoggerFactory.getLogger(Main.class);</span>
+
+//    public static void main(String[] args) {
+//        Stream&lt;String&gt; stream = Stream.of(&quot;1&quot;, &quot;2&quot;, &quot;4&quot;, &quot;3&quot;);
+//        Supplier&lt;Stream&lt;String&gt;&gt; supplier = () -&gt; Stream.of(&quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;1&quot;);
+//        //     Stream&lt;Date&gt; stream1 = Stream.generate(() -&gt; {return new Date();});
+////        stream1.limit(10).forEach(System.out::println);
+////        Stream.Builder&lt;String&gt; builder = Stream.builder();
+////        Stream&lt;String&gt; stream2 = builder
+////                .add(&quot;ABC&quot;).add(&quot;BCX&quot;).add(&quot;XYZ&quot;).add(&quot;GHK&quot;).build();
+//        // stream2.forEach(System.out::print);
+//        ///  supplier.get().skip(1).limit(10).forEach(System.out::println);
+//        // stream.filter(s -&gt; s.contains(&quot;Script&quot;)).forEach(System.out::println);
+//        //stream.map(s -&gt; s.startsWith(&quot;J&quot;)).sorted().forEach(System.out::println);
+//        // List&lt;String&gt; strings = Arrays.asList(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;);
+//        //   Stream&lt;List&lt;String&gt;&gt; listStream = Stream.of(strings);
+//        // listStream.filter(strings1 -&gt; strings1.equals(&quot;1&quot;)).forEach(System.out::println);
+//        // listStream.flatMap(strings1 -&gt; strings1.stream()).filter(s -&gt; s.equals(&quot;1&quot;)).forEach(s -&gt; System.out.println(&quot;Numbmer is : &quot;+ s));
+//        // ABC aaa = new ABC();
+//        // List&lt;Integer&gt; values = Arrays.asList(1, 3, 2);
+//        // values.stream().sorted(aaa::compare).forEach(System.out::println);
+//        //       String a = supplier.get().max(String::compareTo).get();
+//        //    logger.info(&quot;Count result is: {}, Max value is: {}&quot;, supplier.get().filter(s -&gt; s.equals(a)).count(), a);
+//        //      supplier.get().filter(s -&gt; s.contains(&quot;a&quot;)).peek(s -&gt; System.out.println(&quot;value is&quot; + s)).findFirst();
+////
+////        List&lt;String&gt; list = Arrays.asList(&quot;D&quot;, &quot;A&quot;, &quot;C&quot;, &quot;B&quot;);
+////        Optional&lt;String&gt; result = list.stream().findAny();
+////        Optional&lt;String&gt; result1 = list.stream().findAny();
+////        Optional&lt;String&gt; result2 = list.stream().findAny();
+////        Optional&lt;String&gt; result3 = list.stream().findAny();
+////        System.out.println(result.get() +&quot; &quot;+ result1.get() +&quot; &quot;+ result2.get()+&quot; &quot;+result3.get());
+////    }
+////        List&lt;Integer&gt; integers = Arrays.asList(-5, 5, 23, 4, 0, -1, 3);
+////
+////        Integer value = integers.stream()
+////                .filter(i -&gt; i &gt;= 0 &amp;&amp; i &lt;= 5)
+////                .findAny().get();
+////        System.out.println(value);
+////        //value.ifPresent(v -&gt; System.out.println(v));
+////
+////    long time_start = System.currentTimeMillis();
+////        Stream&lt;Integer&gt; stream1 = IntStream.range(0,1000000).map(i -&gt; i).boxed();
+////        System.out.println(stream1.count());
+////        long time_end = System.currentTimeMillis();
+////        System.out.println(&quot;time is: &quot; +(time_end - time_start));
+////        Optional&lt;String&gt; optional = Optional.empty();
+////       // Optional&lt;String&gt; optional1 = Optional.of(&quot;Nguyễn Khánh Tài&quot;);
+////       // optional.get();
+////        System.out.println(optional.isPresent());
+////
+////        optional1.ifPresent(s -&gt; s.replace(&quot;a&quot;,&quot;Y&quot;));
+////        System.out.println(optional1.get());
+////        ;
+//        // optional.orElseThrow(() -&gt; new NumberFormatException(&quot;This should not happen!!!&quot;));
+//        //   Optional&lt;Optional&lt;String&gt;&gt; multiOptional = Optional.of(Optional.of(&quot;Hello&quot;));
+//        /*
+//         * day 9
+//         * */
+//
+//        Province province = new Province(&quot;Hung Yen&quot;);
+//        Adress adress = new Adress(province);
+//
+//        Person person = new Person();
+//        Person person1 = null;
+//        Person person2 = new Person(&quot;Tai NK&quot;, adress);
+//        Person person3 = new Person(&quot;Tai NK2&quot;, new Adress());
+//
+//
+//        logger.info(&quot;{}&quot;,display(person2));
+////        Optional&lt;Optional&lt;String&gt;&gt; multiOptional = Optional.of(Optional.of(&quot;gpcodre&quot;));
+////
+////        System.out.println(&quot;Value of Optional object: &quot; + multiOptional);
+////        System.out.println(&quot;Optional.map: &quot; + multiOptional.map(gender -&gt; gender.map(String::toUpperCase)));
+////        System.out.println(&quot;Optional.flatMap: &quot; + multiOptional.flatMap(gender -&gt; gender.map(String::toUpperCase)));
+//
+////        List&lt;Person1&gt; list = Arrays.asList(
+////                new Person1(&quot;Tai&quot;, 30),
+////                new Person1(&quot;T&quot;, 12),
+////                new Person1(&quot;Ai&quot;, 11),
+////                new Person1(&quot;Ti&quot;, 02));
+////        Predicate&lt;Person1&gt; predicate = s -&gt; s.getAge() &lt; 30;
+////        Predicate&lt;Person1&gt; predicate1 = s -&gt; s.getName().equals(&quot;Tai&quot;);
+////
+////        Optional&lt;Person1&gt; personX = list.stream().filter(predicate.and(predicate1)).findFirst();
+////
+////        personX.ifPresent(p -&gt; System.out.println(p.getName()));
+////
+////        personX.orElseThrow(() -&gt; new IllegalArgumentException(&quot;Cannot found&quot;));
+//
+//    }
+
+    public static Optional&lt;String&gt; display(Person person) {
+<span class="fc" id="L101">        Optional&lt;String&gt; o = Optional.ofNullable(Optional.ofNullable(person)</span>
+<span class="fc" id="L102">                .flatMap(person2 -&gt; Optional.ofNullable(person2.adress)</span>
+<span class="fc" id="L103">                        .flatMap(address -&gt; Optional.ofNullable(address.province))</span>
+<span class="fc" id="L104">                        .flatMap(province -&gt; Optional.ofNullable(province.Provinct)))</span>
+<span class="fc" id="L105">                .orElseThrow(() -&gt; new RuntimeException(&quot;Hello word&quot;)));</span>
+<span class="fc" id="L106">        return o;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

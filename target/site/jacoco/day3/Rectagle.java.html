@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rectagle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day3</a> &gt; <span class="el_source">Rectagle.java</span></div><h1>Rectagle.java</h1><pre class="source lang-java linenums">package day3;
+public class Rectagle extends Shape {
+    private int height;
+    private int width;
+    private int Ox;
+    private int Oy;
+
+<span class="nc" id="L8">    public Rectagle(int height, int width, int ox, int oy) {</span>
+<span class="nc" id="L9">        this.height = height;</span>
+<span class="nc" id="L10">        this.width = width;</span>
+<span class="nc" id="L11">        Ox = ox;</span>
+<span class="nc" id="L12">        Oy = oy;</span>
+<span class="nc" id="L13">    }</span>
+
+<span class="nc" id="L15">    public Rectagle() {</span>
+
+<span class="nc" id="L17">    }</span>
+
+    @Override
+    void centerPoint() {
+<span class="nc" id="L21">        System.out.println(&quot;CenterPoint of Rectagle: &quot;+&quot;(&quot;+(height/2 +this.Ox) + &quot;,&quot;+(width/2+this.Oy) +&quot;)&quot;);</span>
+<span class="nc" id="L22">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

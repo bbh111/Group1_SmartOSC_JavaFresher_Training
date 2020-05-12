@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SavingAccount.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day3</a> &gt; <span class="el_source">SavingAccount.java</span></div><h1>SavingAccount.java</h1><pre class="source lang-java linenums">package day3;
+public class SavingAccount extends BankAccount {
+<span class="nc" id="L3">    int count = 0;</span>
+
+    public SavingAccount(double balance) {
+<span class="nc" id="L6">        super(balance);</span>
+<span class="nc" id="L7">    }</span>
+
+    public double earnMonthlyInterest() {
+<span class="nc" id="L10">        count = 0;</span>
+<span class="nc" id="L11">        double x = super.getBalance() * 0.01;</span>
+<span class="nc" id="L12">        super.setBalance(super.getBalance() + x);</span>
+<span class="nc" id="L13">        return x;</span>
+    }
+
+    @Override
+    public void deposit() {
+<span class="nc" id="L18">        super.deposit();</span>
+<span class="nc" id="L19">        count++;</span>
+<span class="nc" id="L20">        process(count);</span>
+<span class="nc" id="L21">    }</span>
+
+    @Override
+    public void withdraw() {
+<span class="nc" id="L25">        super.withdraw();</span>
+<span class="nc" id="L26">        count++;</span>
+<span class="nc" id="L27">        process(count);</span>
+<span class="nc" id="L28">    }</span>
+
+    public void process(int count) {
+<span class="nc bnc" id="L31" title="All 2 branches missed.">        if (count &gt; 3) {</span>
+<span class="nc" id="L32">            super.setBalance(super.getBalance() - 1);</span>
+<span class="nc" id="L33">            System.out.println(&quot;Balance after process: &quot; + super.getBalance());</span>
+        } else {
+<span class="nc" id="L35">            System.out.println(&quot;You just have &quot; + (3 - count) + &quot; times free&quot;);</span>
+        }
+<span class="nc" id="L37">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

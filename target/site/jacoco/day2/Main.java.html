@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day2</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package day2;
+
+<span class="nc" id="L3">public class Main {</span>
+    public static void main(String[] args) {
+<span class="nc" id="L5">        Controller con = new Controller();</span>
+<span class="nc" id="L6">        int option = 0;</span>
+        do {
+<span class="nc" id="L8">            con.menu();</span>
+<span class="nc" id="L9">            option = con.valid.checkTime(&quot;Enter your choose: &quot;, 1, 11, &quot;Wrong&quot;);</span>
+<span class="nc bnc" id="L10" title="All 12 branches missed.">            switch (option) {</span>
+                case 1:
+<span class="nc" id="L12">                    con.example1();</span>
+<span class="nc" id="L13">                    break;</span>
+                case 2:
+<span class="nc" id="L15">                    con.example2();</span>
+<span class="nc" id="L16">                    break;</span>
+                case 3:
+<span class="nc" id="L18">                    con.example3();</span>
+<span class="nc" id="L19">                    break;</span>
+                case 4:
+<span class="nc" id="L21">                    con.example4();</span>
+<span class="nc" id="L22">                    break;</span>
+                case 5:
+<span class="nc" id="L24">                    con.example5();</span>
+<span class="nc" id="L25">                    break;</span>
+                case 6:
+<span class="nc" id="L27">                    con.example6();</span>
+<span class="nc" id="L28">                    break;</span>
+                case 7:
+<span class="nc" id="L30">                    con.example7();</span>
+<span class="nc" id="L31">                    break;</span>
+                case 8:
+<span class="nc" id="L33">                    con.example8();</span>
+<span class="nc" id="L34">                    break;</span>
+                case 9:
+<span class="nc" id="L36">                    con.example9();</span>
+<span class="nc" id="L37">                    break;</span>
+                case 10:
+<span class="nc" id="L39">                    con.example10();</span>
+<span class="nc" id="L40">                    break;</span>
+                case 11:
+<span class="nc" id="L42">                    con.example11();</span>
+                    break;
+            }
+<span class="nc bnc" id="L45" title="All 4 branches missed.">        } while (option &gt;= 1 &amp;&amp; option &lt;= 11);</span>
+
+
+<span class="nc" id="L48">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

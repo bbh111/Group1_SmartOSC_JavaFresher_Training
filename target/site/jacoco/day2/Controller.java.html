@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Controller.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day2</a> &gt; <span class="el_source">Controller.java</span></div><h1>Controller.java</h1><pre class="source lang-java linenums">package day2;
+
+import java.util.*;
+
+<span class="nc" id="L5">public class Controller {</span>
+<span class="nc" id="L6">    Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L7">    Valid valid = new Valid();</span>
+<span class="nc" id="L8">    Random random = new Random();</span>
+
+
+    public void example1() {
+<span class="nc" id="L12">        int number = valid.isIntNumber(&quot;Enter size of array: &quot;);</span>
+<span class="nc" id="L13">        System.out.println(&quot;-----Example1: Value of element in array is random-----&quot;);</span>
+<span class="nc" id="L14">        int[] arrInt = getArray2(0, number, number);</span>
+<span class="nc" id="L15">        System.out.println(&quot;All values random in array is: &quot;);</span>
+<span class="nc" id="L16">        displayArr(arrInt);</span>
+
+<span class="nc" id="L18">    }</span>
+
+    public void displayArr(int[] arr) {
+<span class="nc bnc" id="L21" title="All 2 branches missed.">        for (int i : arr) {</span>
+<span class="nc" id="L22">            System.out.print(i + &quot;\t&quot;);</span>
+        }
+<span class="nc" id="L24">        System.out.println();</span>
+<span class="nc" id="L25">    }</span>
+
+    public void example2() {
+<span class="nc" id="L28">        System.out.println(&quot;-----Example2: Swap adjacent elements of an array of integers -----&quot;);</span>
+<span class="nc" id="L29">        int size = valid.isIntNumber(&quot;Enter size of array: &quot;);</span>
+<span class="nc" id="L30">        int[] arrDomain = getArray2(-20, size, 100); // random element from -20 to 100;</span>
+<span class="nc" id="L31">        System.out.println(&quot;Array in first time&quot;);</span>
+<span class="nc" id="L32">        displayArr(arrDomain);</span>
+<span class="nc" id="L33">        System.out.println();</span>
+<span class="nc" id="L34">        System.out.println(&quot;Array after swap&quot;);</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for (int i = 0; i &lt; arrDomain.length; i++) {</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">            if (i + 1 &lt; arrDomain.length) { // check the next index is out of range yet.</span>
+<span class="nc" id="L37">                int valueTemp = swap(i, arrDomain, i + 1);</span>
+<span class="nc" id="L38">                i = valueTemp + 1; // continue with index++;</span>
+            }
+        }
+<span class="nc" id="L41">        displayArr(arrDomain);</span>
+<span class="nc" id="L42">    }</span>
+
+    public void example3() {
+<span class="nc" id="L45">        System.out.println(&quot;-----Example 3: Display positive number first and negative number is second-----&quot;);</span>
+
+<span class="nc" id="L47">        int size = valid.isIntNumber(&quot;Enter size of array: &quot;);</span>
+<span class="nc" id="L48">        int[] arrDomain = getArray2(-20, size, 100);</span>
+<span class="nc" id="L49">        ArrayList&lt;Integer&gt; arrPos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L50">        ArrayList&lt;Integer&gt; arrNeg = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        for (int i : arrDomain) {</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">            if (i &gt; 0) {</span>
+<span class="nc" id="L53">                arrPos.add(i);</span>
+            } else {
+<span class="nc" id="L55">                arrNeg.add(i);</span>
+            }
+        }
+        //Display array
+<span class="nc" id="L59">        System.out.println(&quot;Array in first time: &quot;);</span>
+<span class="nc" id="L60">        displayArr(arrDomain);</span>
+<span class="nc" id="L61">        System.out.println();</span>
+<span class="nc" id="L62">        System.out.println(&quot;Array after process: &quot;);</span>
+<span class="nc" id="L63">        arrDomain = addArray(arrDomain, arrPos, arrNeg);</span>
+<span class="nc" id="L64">        displayArr(arrDomain);</span>
+<span class="nc" id="L65">    }</span>
+
+    public int[] getArray2(int min, int size, int max) {
+
+<span class="nc" id="L69">        int[] arrInt = new int[size];</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="nc" id="L71">            arrInt[i] = min + random.nextInt(max);</span>
+        }
+<span class="nc" id="L73">        return arrInt;</span>
+    }
+
+    public int[] addArray(int[] arrSource, ArrayList&lt;Integer&gt;... array) {
+<span class="nc" id="L77">        int length = arrSource.length;</span>
+<span class="nc" id="L78">        int index = 0;</span>
+<span class="nc" id="L79">        arrSource = new int[length];</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">        for (ArrayList&lt;Integer&gt; temp : array) {</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">            for (int i : temp) {</span>
+<span class="nc" id="L82">                arrSource[index++] = i;</span>
+<span class="nc" id="L83">            }</span>
+        }
+<span class="nc" id="L85">        return arrSource;</span>
+    }
+
+    public int swap(int x, int[] arr, int y) {
+<span class="nc" id="L89">        int temp = arr[x];</span>
+<span class="nc" id="L90">        arr[x] = arr[y];</span>
+<span class="nc" id="L91">        arr[y] = temp;</span>
+<span class="nc" id="L92">        return x;</span>
+    }
+
+    public double[] getArray3(int min, int size, double max) {
+
+<span class="nc" id="L97">        double[] arrInt = new double[size];</span>
+<span class="nc bnc" id="L98" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="nc" id="L99">            arrInt[i] = random.nextDouble();</span>
+        }
+<span class="nc" id="L101">        return arrInt;</span>
+    }
+
+    public void example4() {
+<span class="nc" id="L105">        System.out.println(&quot;-----Example 4: The average of Array-----&quot;);</span>
+<span class="nc" id="L106">        int size = valid.isIntNumber(&quot;Enter size of array: &quot;);</span>
+<span class="nc" id="L107">        double[] array = getArray3(-20, size, 100);</span>
+<span class="nc" id="L108">        Double sum = 0.0;</span>
+<span class="nc" id="L109">        int countElement = 0;</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">        for (Double x : array) {</span>
+<span class="nc" id="L111">            sum += x;</span>
+<span class="nc" id="L112">            countElement++;</span>
+        }
+
+<span class="nc bnc" id="L115" title="All 2 branches missed.">        for (double x : array) {</span>
+<span class="nc" id="L116">            System.out.print(x + &quot;\t&quot;);</span>
+        }
+<span class="nc" id="L118">        System.out.println();</span>
+<span class="nc" id="L119">        double resut = sum / countElement;</span>
+<span class="nc" id="L120">        System.out.println(&quot;The average of Array is: &quot; + resut);</span>
+<span class="nc" id="L121">    }</span>
+
+    public void example5() {
+<span class="nc" id="L124">        System.out.println(&quot;-----Example 5: Rearrange the elements of Array-----&quot;);</span>
+<span class="nc" id="L125">        int size = valid.isIntNumber(&quot;Enter size of array: &quot;);</span>
+<span class="nc" id="L126">        Integer[] arrDomain = new Integer[size];</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="nc" id="L128">            arrDomain[i] = random.nextInt(100);</span>
+        }
+<span class="nc" id="L130">        System.out.println(&quot;Array in first time: &quot;);</span>
+<span class="nc" id="L131">        display(arrDomain);</span>
+<span class="nc" id="L132">        System.out.println(&quot;Array is after sort: &quot;);</span>
+<span class="nc" id="L133">        Arrays.sort(arrDomain, Collections.reverseOrder());</span>
+<span class="nc" id="L134">        display(arrDomain);</span>
+<span class="nc" id="L135">    }</span>
+
+    public void display(Object[] array) {
+<span class="nc bnc" id="L138" title="All 2 branches missed.">        for (Object i : array) {</span>
+<span class="nc" id="L139">            System.out.print(i + &quot;\t&quot;);</span>
+        }
+<span class="nc" id="L141">        System.out.println();</span>
+<span class="nc" id="L142">    }</span>
+
+    public void example6() {
+<span class="nc" id="L145">        System.out.println(&quot;-----Example 6: Remove element is duplicate: -----&quot;);</span>
+<span class="nc" id="L146">        int size = valid.isIntNumber(&quot;Enter size of array: &quot;);</span>
+<span class="nc" id="L147">        int[] array = getArray2(-20, size, 100);</span>
+<span class="nc" id="L148">        System.out.println(&quot;This is array in first time: &quot;);</span>
+<span class="nc" id="L149">        displayArr(array);</span>
+<span class="nc" id="L150">        System.out.println(&quot;After remove element is duplicate: &quot;);</span>
+<span class="nc" id="L151">        ArrayList&lt;Integer&gt; integers = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L152" title="All 2 branches missed.">        for (int i = 0; i &lt; array.length; i++) { // get distinc element in array</span>
+<span class="nc bnc" id="L153" title="All 2 branches missed.">            if (!integers.contains(array[i])) {</span>
+<span class="nc" id="L154">                integers.add(array[i]);</span>
+            }
+        }
+<span class="nc" id="L157">        array = new int[integers.size()];</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">        for (int i = 0; i &lt; integers.size(); i++) { // ReUpdate array;</span>
+<span class="nc" id="L159">            array[i] = integers.get(i);</span>
+        }
+<span class="nc" id="L161">        displayArr(array);</span>
+<span class="nc" id="L162">    }</span>
+
+    public void example7() {
+<span class="nc" id="L165">        System.out.println(&quot;-----Example 7: Get time zone in America-----&quot;);</span>
+<span class="nc" id="L166">        String[] list = TimeZone.getAvailableIDs();</span>
+<span class="nc" id="L167">        List&lt;String&gt; strings = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L168" title="All 2 branches missed.">        for (String y : list) {</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">            if (y.contains(&quot;America&quot;)) {</span>
+<span class="nc" id="L170">                String[] temp = y.split(&quot;/&quot;);</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">                for (int i = 0; i &lt; temp.length; i++) { //loop all element in array</span>
+<span class="nc bnc" id="L172" title="All 2 branches missed.">                    if (temp[i].equals(&quot;America&quot;)) { // Skip word &quot;America&quot;</span>
+<span class="nc bnc" id="L173" title="All 2 branches missed.">                        if (!strings.contains(temp[i])) { // check duplicate element</span>
+<span class="nc" id="L174">                            strings.add(temp[i]);</span>
+                        }
+                    }
+                }
+            }
+        }
+        //sort element
+<span class="nc" id="L181">        strings.sort(new Comparator&lt;String&gt;() {</span>
+            @Override
+            public int compare(String o1, String o2) {
+<span class="nc" id="L184">                return o2.compareTo(o1);</span>
+            }
+        });
+<span class="nc" id="L187">        System.out.println(&quot; all time zones&quot;);</span>
+<span class="nc" id="L188">        list = new String[strings.size()];</span>
+<span class="nc" id="L189">        int index = 0;</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">        for (String temp : strings) {</span>
+<span class="nc" id="L191">            list[index++] = temp;</span>
+<span class="nc" id="L192">        }</span>
+        //display alll element
+<span class="nc bnc" id="L194" title="All 2 branches missed.">        for (String s : list) {</span>
+<span class="nc" id="L195">            System.out.println(s);</span>
+        }
+<span class="nc" id="L197">    }</span>
+
+    public void example8() {
+<span class="nc" id="L200">        System.out.println(&quot;-----Example 8-----&quot;);</span>
+<span class="nc" id="L201">        BankAccount bankAccount = new BankAccount(10000); //default balance is 10000</span>
+<span class="nc" id="L202">        System.out.println(&quot;You want to :&quot;);</span>
+<span class="nc" id="L203">        System.out.println(&quot;1- deposit &quot;);</span>
+<span class="nc" id="L204">        System.out.println(&quot;2- withdraw&quot;);</span>
+<span class="nc" id="L205">        int option = valid.isIntNumber(&quot;Enter your choose: &quot;);</span>
+<span class="nc bnc" id="L206" title="All 3 branches missed.">        switch (option) {</span>
+            case 1:
+<span class="nc" id="L208">                bankAccount.deposit();</span>
+<span class="nc" id="L209">                break;</span>
+            case 2:
+<span class="nc" id="L211">                bankAccount.withdraw();</span>
+
+
+                
+                break;
+        }
+<span class="nc" id="L217">    }</span>
+
+    public void example9() {
+<span class="nc" id="L220">        System.out.println(&quot;-----Example 9-----&quot;);</span>
+<span class="nc" id="L221">        System.out.println();</span>
+<span class="nc" id="L222">        int hoursCur = valid.checkTime(&quot;Enter the first hours: &quot;, 0, 23, &quot;Range of Hour must from 0 to 23: &quot;);</span>
+<span class="nc" id="L223">        int minutesCur = valid.checkTime(&quot;Enter the first minutes: &quot;, 0, 59, &quot;Range of Minute must from 0 to 59: &quot;);</span>
+
+<span class="nc" id="L225">        int hoursCheck = valid.checkTime(&quot;Enter hours need to check: &quot;, 0, 23, &quot;Range of Hour must from 0 to 23: &quot;);</span>
+<span class="nc" id="L226">        int minutesCheck = valid.checkTime(&quot;Enter minutes need to check: &quot;, 0, 59, &quot;Range of Minute must from 0 to 59: &quot;);</span>
+
+<span class="nc" id="L228">        Time time = new Time(hoursCheck, minutesCheck);</span>
+<span class="nc" id="L229">        System.out.println(&quot;this time comes before the other: &quot; + time.before(hoursCur, minutesCur));  // check before</span>
+
+<span class="nc" id="L231">    }</span>
+
+    public void example10() {
+<span class="nc" id="L234">        System.out.println(&quot;-----Example 10-----&quot;);</span>
+<span class="nc" id="L235">        System.out.println();</span>
+<span class="nc" id="L236">        int hoursCur = valid.checkTime(&quot;Enter the first hours: &quot;, 0, 24, &quot;Range of Hour must from 0 to 23: &quot;);</span>
+<span class="nc" id="L237">        int minutesCur = valid.checkTime(&quot;Enter the first minutes: &quot;, 0, 59, &quot;Range of Minute must from 0 to 59: &quot;);</span>
+
+<span class="nc" id="L239">        int hoursCheck = valid.checkTime(&quot;Enter hours need to check: &quot;, 0, 24, &quot;Range of Hour must from 0 to 23: &quot;);</span>
+<span class="nc" id="L240">        int minutesCheck = valid.checkTime(&quot;Enter minutes need to check: &quot;, 0, 59, &quot;Range of Minute must from 0 to 59: &quot;);</span>
+
+<span class="nc" id="L242">        Time time = new Time(hoursCheck, minutesCheck);</span>
+<span class="nc" id="L243">        System.out.println(&quot;this time comes before the other: &quot; + time.before(hoursCur, minutesCur));  // check before</span>
+<span class="nc" id="L244">    }</span>
+
+    public void menu() {
+<span class="nc" id="L247">        System.out.println(&quot;***** 1.Example 1 &quot;);</span>
+<span class="nc" id="L248">        System.out.println(&quot;***** 2.Example 2 &quot;);</span>
+<span class="nc" id="L249">        System.out.println(&quot;***** 3.Example 3&quot;);</span>
+<span class="nc" id="L250">        System.out.println(&quot;***** 4.Example 4 &quot;);</span>
+<span class="nc" id="L251">        System.out.println(&quot;***** 5.Example 5 &quot;);</span>
+<span class="nc" id="L252">        System.out.println(&quot;***** 6.Example 6 &quot;);</span>
+<span class="nc" id="L253">        System.out.println(&quot;***** 7.Example 7 &quot;);</span>
+<span class="nc" id="L254">        System.out.println(&quot;***** 8.Example 8 &quot;);</span>
+<span class="nc" id="L255">        System.out.println(&quot;***** 9.Example 9 &quot;);</span>
+<span class="nc" id="L256">        System.out.println(&quot;***** 10.Example 10 &quot;);</span>
+<span class="nc" id="L257">        System.out.println(&quot;***** 11.Example 11 &quot;);</span>
+<span class="nc" id="L258">    }</span>
+
+    public void example11() {
+<span class="nc" id="L261">        System.out.println(&quot;Enter fullName&quot;);</span>
+<span class="nc" id="L262">        String fullName = sc.nextLine();</span>
+<span class="nc" id="L263">        Person person = new Person(fullName);</span>
+<span class="nc" id="L264">        person.display();</span>
+<span class="nc" id="L265">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ex3.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day5.ex3</a> &gt; <span class="el_source">Ex3.java</span></div><h1>Ex3.java</h1><pre class="source lang-java linenums">package day5.ex3;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+<span class="nc" id="L7">public class Ex3 {</span>
+    public &lt;T extends Comparable&lt;T&gt;&gt; T maximum(List&lt;T&gt; list,int begin,int end) {
+<span class="nc" id="L9">        T max = list.get(0);</span>
+<span class="nc bnc" id="L10" title="All 2 branches missed.">        for(int i = begin; i &lt; end;i++){</span>
+<span class="nc bnc" id="L11" title="All 2 branches missed.">            if(list.get(i).compareTo(max) &gt; 0){</span>
+<span class="nc" id="L12">                max = list.get(i);</span>
+            }
+        }
+<span class="nc" id="L15">        return max;</span>
+    }
+
+    public static void main(String[] args) {
+<span class="nc" id="L19">        Integer[] arr = {1, 2, 3, 4, 5, 6, 22, 7, 9, 17};</span>
+<span class="nc" id="L20">        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};</span>
+<span class="nc" id="L21">        Ex3 ex3 = new Ex3();</span>
+<span class="nc" id="L22">        double temp = ex3.maximum(Arrays.asList(doubleArray),0,3);</span>
+<span class="nc" id="L23">        System.out.println(temp);</span>
+<span class="nc" id="L24">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

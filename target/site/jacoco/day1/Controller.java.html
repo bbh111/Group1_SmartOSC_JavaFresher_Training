@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Controller.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JAVA_TaiNK_day1_simple</a> &gt; <a href="index.source.html" class="el_package">day1</a> &gt; <span class="el_source">Controller.java</span></div><h1>Controller.java</h1><pre class="source lang-java linenums">package day1;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+<span class="nc" id="L8">public class Controller {</span>
+<span class="nc" id="L9">    Scanner sc = new Scanner(System.in);</span>
+    public void ex1(){
+<span class="nc" id="L11">        System.out.print(&quot;Enter string: &quot;);</span>
+<span class="nc" id="L12">        String strTemp = sc.nextLine();</span>
+<span class="nc" id="L13">        System.out.println(strTemp.length());</span>
+<span class="nc bnc" id="L14" title="All 4 branches missed.">        if(strTemp.isEmpty() || strTemp == null){</span>
+<span class="nc" id="L15">            strTemp = &quot;Hello world&quot;;</span>
+        }
+<span class="nc" id="L17">        char firstChar = strTemp.charAt(0);</span>
+<span class="nc" id="L18">        char lastChar = strTemp.charAt(strTemp.length()-1);</span>
+<span class="nc" id="L19">        System.out.println(&quot;This is first character: &quot; + firstChar);</span>
+<span class="nc" id="L20">        System.out.println(&quot;This is last character: &quot;+ lastChar);</span>
+<span class="nc" id="L21">    }</span>
+    public void ex2(){
+<span class="nc" id="L23">        BigInteger numFirst = new BigInteger(&quot;2&quot;);</span>
+<span class="nc" id="L24">        BigInteger result = numFirst.pow(1024);</span>
+<span class="nc" id="L25">        System.out.println(result);</span>
+<span class="nc" id="L26">    }</span>
+    public void ex3(){
+<span class="nc" id="L28">        System.out.print(&quot;Enter number: &quot;);</span>
+<span class="nc" id="L29">        int number = Integer.valueOf(sc.nextLine());</span>
+<span class="nc" id="L30">        System.out.print(&quot;All number from 0 to &quot; + number +&quot; is: \t&quot;);</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">        for(int i=0; i&lt; number;i++){</span>
+<span class="nc" id="L32">            System.out.print(i+&quot; &quot;);</span>
+        }
+<span class="nc" id="L34">        System.out.println();</span>
+
+<span class="nc" id="L36">    }</span>
+    public void ex4(){
+<span class="nc" id="L38">        System.out.print(&quot;Enter string: &quot;);</span>
+<span class="nc" id="L39">        String text = sc.nextLine();</span>
+
+<span class="nc" id="L41">        Long longTemp = 1L;</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        for(int i = 0 ;i&lt; text.length();i++){</span>
+<span class="nc" id="L43">            longTemp *= (int) text.charAt(i);</span>
+        }
+<span class="nc" id="L45">        System.out.println(longTemp);</span>
+<span class="nc" id="L46">    }</span>
+
+    public Long getResultEx5() {
+<span class="nc" id="L49">        return resultEx5;</span>
+    }
+
+    public void setResultEx5(Long resultEx5) {
+<span class="nc" id="L53">        this.resultEx5 = resultEx5;</span>
+<span class="nc" id="L54">    }</span>
+
+<span class="nc" id="L56">    String temp2 = null;</span>
+<span class="nc" id="L57">    Long resultEx5 = 1L;</span>
+    public int ex5(String temp){
+<span class="nc bnc" id="L59" title="All 2 branches missed.">       if(temp.length() &gt; 0){</span>
+<span class="nc" id="L60">           temp2 = temp.substring(0,temp.length()-1); //check the lenghth of String is out of range yet.</span>
+<span class="nc" id="L61">           resultEx5 *= (int)temp.charAt(temp.length()-1);</span>
+<span class="nc bnc" id="L62" title="All 4 branches missed.">           if(temp2 != null || temp2.isEmpty()){</span>
+<span class="nc" id="L63">               return ex5(temp2);</span>
+           }
+       }
+<span class="nc" id="L66">        return 1;</span>
+    }
+    public void stringFunction(){
+<span class="nc" id="L69">        System.out.println(&quot;Enter String: &quot;);</span>
+<span class="nc" id="L70">        String text = sc.nextLine();</span>
+<span class="nc" id="L71">        System.out.println(&quot;Your string is: &quot;+ text);</span>
+<span class="nc" id="L72">        System.out.println(&quot;Enter number: &quot;);</span>
+        int option;
+<span class="nc" id="L74">        option = Integer.valueOf(sc.nextLine());</span>
+<span class="nc bnc" id="L75" title="All 4 branches missed.">        while (option &lt; 0 || option &gt; text.length()){</span>
+<span class="nc" id="L76">            System.out.println(&quot;Out of range:  &quot;);</span>
+<span class="nc" id="L77">            option = Integer.valueOf(sc.nextLine());</span>
+        }
+<span class="nc" id="L79">        System.out.println(&quot;Select first n element: &quot; + text.substring(0,option).charAt(0));</span>
+<span class="nc" id="L80">        int lengt = text.substring(option,text.length()).length();</span>
+
+<span class="nc" id="L82">        System.out.println(&quot;Select last n element: &quot; +text.substring(option,text.length()).charAt(lengt-1));</span>
+<span class="nc" id="L83">        System.out.println(&quot;Selects all elements except first n ones.&quot;+ text.substring(1,option));</span>
+<span class="nc" id="L84">        System.out.println(&quot;Selects all elements except last n ones.&quot;+ text.substring(option,text.length()-1));</span>
+
+<span class="nc" id="L86">    }</span>
+    public void menu(){
+<span class="nc" id="L88">        System.out.println(&quot;Example 1. Get the character&quot;);</span>
+<span class="nc" id="L89">        System.out.println(&quot;Example 2. Using BigInt&quot;);</span>
+<span class="nc" id="L90">        System.out.println(&quot;Example 3. Prints the numbers &quot;);</span>
+<span class="nc" id="L91">        System.out.println(&quot;Example 4. Product of the Unicode codes&quot;);</span>
+<span class="nc" id="L92">        System.out.println(&quot;Example 5. Recursive function.&quot;);</span>
+<span class="nc" id="L93">        System.out.println(&quot;Example 6. String function.&quot;);</span>
+<span class="nc" id="L94">        System.out.println(&quot;Enter your choose: &quot;);</span>
+
+<span class="nc" id="L96">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
