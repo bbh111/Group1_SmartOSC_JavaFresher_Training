@@ -4,8 +4,9 @@ import java.util.concurrent.BlockingQueue;
 
 public class Counter implements Runnable {
     private final BlockingQueue<Storage> queue;
+
     public Counter(BlockingQueue<Storage> blockingQueue) {
-        this.queue= blockingQueue;
+        this.queue = blockingQueue;
     }
 
     @Override

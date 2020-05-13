@@ -13,3 +13,9 @@ N
 src/main/java/entity/User.java,b\a\ba7ac8670f3f87adc8663aab792e9f47d90839bc
 P
  src/main/java/util/JdbcUtil.java,1\f\1fc25fe43acf86f9cd8434823d1f045e2c134ade
+Y
+)src/main/java/model/ConnectionHelper.java,1\e\1e984689cb5e3ddb2cedfd53f938616d52b3392d
+T
+$src/main/java/annotation/Column.java,c\b\cbbb3ac42a02dd7ccfa12266b1c22dfe4e40dee3
+Q
+!src/main/java/entity/Product.java,8\a\8ae77957877f4d5eed3d978e1da2d4e77255d908

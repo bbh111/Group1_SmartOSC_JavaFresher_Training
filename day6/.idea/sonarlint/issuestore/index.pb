@@ -11,3 +11,13 @@ W
 'src/com/smartosc/ex3/CountDivisors.java,2\9\2949c9a1edadcc2fffeda2451534bee90a4ae0fe
 N
 src/com/smartosc/ex3/Main.java,a\d\add514523fd2fe46de81624093845ad3b5250bf3
+>
+test/Main.java,8\2\82014f7376206d6624494d438930ffeade4697bc
+F
+test/ContDivisors.java,b\d\bd834163fc1cd58a1da3364b9454962cf412cae4
+;
+test/C.java,0\7\07217a28df67bed8a69d23a270bcb1e2de7e3e0c
+D
+test/IMyCompare.java,2\e\2ef7ea1f4c5b816002758d609e5100d81e1a9700
+C
+test/MyCompare.java,0\2\02acab7058bbc27036d9dcf6d84e80d141d92a05

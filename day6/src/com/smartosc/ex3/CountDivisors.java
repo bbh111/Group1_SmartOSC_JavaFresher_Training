@@ -9,7 +9,7 @@ public class CountDivisors {
     private static volatile int maxDivisorCount = 0;
 
     /**
-     * Số nguyên có nhiều ước chung nhất. Cường nhé!
+     * Số nguyên có nhiều ước nhất.
      */
     private static volatile int intWithMaxDivisorCount;
 
@@ -22,7 +22,7 @@ public class CountDivisors {
         }
 
         private static synchronized void report(int maxCountFromThread, int intWithMaxFromThread) {
-            if (maxCountFromThread > maxDivisorCount) {
+            if (maxCountFromThread >= maxDivisorCount) {
                 maxDivisorCount = maxCountFromThread;
                 intWithMaxDivisorCount = intWithMaxFromThread;
             }
@@ -34,7 +34,7 @@ public class CountDivisors {
             int whichInt = 0;
             for (int i = min; i < max; i++) {
                 int divisors = countDivisors(i);
-                if (divisors > maxDivisors) {
+                if (divisors >= maxDivisors) {
                     maxDivisors = divisors;
                     whichInt = i;
                 }
@@ -75,7 +75,7 @@ public class CountDivisors {
         long elapsedTime = System.currentTimeMillis() - startTime;
         System.out.println("\nSố lượng ước số lớn nhất " +
                 "cho các số từ 1 đến " + MAX + " là: " + maxDivisorCount);
-        System.out.println("Một số nguyên có nhiều ước chung là: " +
+        System.out.println("Một số nguyên có nhiều ước là: " +
                 intWithMaxDivisorCount);
         System.out.println("Tổng thời gian:  " +
                 (elapsedTime / 1000.0) + " giây.\n");

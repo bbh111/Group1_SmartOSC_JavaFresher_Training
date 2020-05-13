@@ -1,5 +1,6 @@
 package entity;
 
+import annotation.Column;
 import annotation.Entity;
 import annotation.GeneratedValue;
 import annotation.Id;
@@ -9,8 +10,8 @@ import util.JdbcUtil;
 public class User {
     @Id
     @GeneratedValue(strategy = JdbcUtil.GenerationType.IDENTITY)
-    private long id;
-
+    private Long id;
+    @Column
     private String name;
 
     public User(long id) {

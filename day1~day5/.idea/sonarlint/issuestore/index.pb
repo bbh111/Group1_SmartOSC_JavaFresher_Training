@@ -55,7 +55,5 @@ Y
 )src/main/java/com/smartosc/day5/Main.java,3\c\3c220a3c171b5bb104e24d81e5de9ce2a893845f
 4
 mvnw,5\d\5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
-G
-out/production/mvnw.cmd,7\4\749a878829e4fc1fc1986f249f64043228f053f9
 8
 mvnw.cmd,1\f\1f1763f358c257ea3515417352b82b0165647ad1
