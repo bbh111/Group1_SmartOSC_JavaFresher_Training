@@ -1,5 +1,6 @@
 package day10;
 
+import day11.Valid;
 import day8.Adress;
 import day8.Main;
 import day8.Person;
@@ -28,5 +29,10 @@ public class OptionalTest {
         Main main = new Main();
         Exception exception = Assertions.assertThrows(RuntimeException.class, () -> { Main.display(person1);} );
         Assert.assertTrue(exception.getMessage().contains(expectedMessage));
+    }
+    @Test
+    public void xxx(){
+        Valid valid = new Valid();
+     //  int x =  valid.readFile2("<h1>");
     }
 }
