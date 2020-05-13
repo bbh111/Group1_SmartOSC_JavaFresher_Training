@@ -29,8 +29,8 @@ public class Result implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        return   this.getMaxCount() - ((Result)o).getMaxCount();
+    public int compareTo(Object other) {
+        return   this.getMaxCount()<=((Result)other).getMaxCount()?1:0;
     }
 }
 

@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 public class CountDivisor {
     private int start;
     private int end;
-    private int MAX = 100000;
+    private int MAX = 1000000;
 
     private static Logger logger = LoggerFactory.getLogger(CountDivisor.class);
     public Result findOutLagestDevisor(int numberOfThread) throws Exception {
@@ -41,7 +41,7 @@ public class CountDivisor {
         service.shutdown();
         list.forEach((futures) ->{
             try {
-                if(futures.get().getMaxCount()>=finalRs.getMaxCount()){
+                if(finalRs.compareTo(futures.get())==1){
                     finalRs.setMaxCount(futures.get().getMaxCount());
                     finalRs.setMaxDivisorsNumber(futures.get().getMaxDivisorsNumber());
                 }

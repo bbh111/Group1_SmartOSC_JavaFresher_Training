@@ -30,7 +30,7 @@ public class FindThread  implements Callable<Result> {
                 maxDivisors = i;
             }
         }
-        //logger.info(maxDivisors + ":"+maxCount);
+        logger.info(maxDivisors + ":"+maxCount);
         return new Result(maxDivisors,maxCount);
     }
 }
