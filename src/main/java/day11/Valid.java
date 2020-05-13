@@ -11,13 +11,9 @@ import java.util.stream.Stream;
 public class Valid {
     public static void main(String[] args) {
         String regex = "^(3[0-1]|((1|2|0)[0-9]))[/](0[1-9]|1[0-2])[/][0-9]{4}$";
-        //Pattern pattern = Pattern.compile(regex);
         String text = "31/07/1999";
         text.matches(regex);
-        //System.out.println();
         Valid valid = new Valid();
-        // valid.readFile();
-        // valid.readFile2("(<h1>)");
         valid.read();
     }
 
