@@ -16,7 +16,7 @@ public class DAO {
             if(pstm != null){
                 ResultSet resultSet = pstm.executeQuery();
                 while (resultSet != null && resultSet.next()){
-
+                    pstm.executeBatch();
                 }
             }
         } catch (SQLException throwables) {
