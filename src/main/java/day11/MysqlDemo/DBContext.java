@@ -25,6 +25,9 @@ public class DBContext {
                 rs.updateInt("age",20);
                 rs.updateRow();
             }
+            
+
+
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
