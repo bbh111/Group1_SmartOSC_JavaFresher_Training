@@ -1,46 +1,27 @@
 package bai1_2;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.concurrent.BlockingQueue;
 
 public class Counter implements Runnable {
-    private Thread t;
-    private final Storage storage;
-    private final int n;
-    private Logger logger = LoggerFactory.getLogger(Printer.class);
-    String threadName = "Counter Thread";
+    private final BlockingQueue<Storage> queue;
 
-    public Counter(Storage storage, int n) {
-        this.storage = storage;
-        this.n = n;
-    }
-
-    public void save(int i) {
-        try {
-            storage.setNumber(i);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void start() {
-        if (t == null) {
-            t = new Thread(this, threadName);
-        }
-        t.start();
+    public Counter(BlockingQueue<Storage> blockingQueue) {
+        this.queue = blockingQueue;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            save(i);
-            logger.info("current thread: " + threadName);
+            try {
+                queue.put(new Storage(i));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

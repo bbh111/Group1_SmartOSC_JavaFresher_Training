@@ -1,35 +1,22 @@
 package bai1_2;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.concurrent.BlockingQueue;
 
 public class Printer implements Runnable {
-    private final Storage storage;
-    private Thread t;
-    private final int n;
-    String threadName = "Printer Thread";
+    private final BlockingQueue<Storage> blockingQueue;
 
-    Logger logger = LoggerFactory.getLogger(Printer.class);
-
-    public Printer(Storage storage, int n) {
-        this.storage = storage;
-        this.n = n;
-//        start();
-    }
-
-    public void start() {
-        if (t == null) {
-            t = new Thread(this, threadName);
-        }
-        t.start();
+    public Printer(BlockingQueue<Storage> queue) {
+        this.blockingQueue = queue;
     }
 
     @Override
     public void run() {
-        while (true) {
-//            System.out.println("Printer is running...");
-//            System.out.println(storage.getNumber());
-            logger.info("current value: ", storage.getNumber());
+        for (int i = 0; i < 10; i++) {
+            try {
+                System.out.println(blockingQueue.take().getNumber());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
     }
