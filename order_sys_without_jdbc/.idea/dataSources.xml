@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="sendemailjdbctest@localhost" uuid="113f8e46-034c-4561-b679-4998d3966236">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/sendemailjdbctest?serverTimezone=UTC</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="sendemailhibernate@localhost" uuid="213317f7-4249-4f39-b767-62cd795d65bd">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/sendemailhibernate?serverTimezone=UTC</jdbc-url>
+    </data-source>
+  </component>
+</project>
